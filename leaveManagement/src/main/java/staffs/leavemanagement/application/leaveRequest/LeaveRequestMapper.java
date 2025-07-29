@@ -1,0 +1,19 @@
+package staffs.leavemanagement.application.leaveRequest;
+
+
+import staffs.leavemanagement.application.leaveRequest.DTO.LeaveRequestDTO;
+import staffs.leavemanagement.infrastructure.leaveRequest.LeaveRequestJpa;
+
+public class LeaveRequestMapper {
+
+    public static LeaveRequestDTO toLeaveRequestDTO(LeaveRequestJpa leaveRequest) {
+        return new LeaveRequestDTO(
+                leaveRequest.getId(),
+                leaveRequest.getStaffId(),
+                leaveRequest.getStatus(),
+                leaveRequest.getStartDate(),
+                leaveRequest.getEndDate(),
+                leaveRequest.getLeaveAmount()
+        );
+    }
+}
