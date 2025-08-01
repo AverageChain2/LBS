@@ -1,8 +1,8 @@
-package staffs.leavemanagement.application.leaveBalance;
+package staffs.staffleave.application.leaveBalance;
 
 
-import staffs.leavemanagement.application.leaveBalance.DTO.LeaveBalanceDTO;
-import staffs.leavemanagement.infrastructure.leaveBalance.LeaveBalanceJpa;
+import staffs.staffleave.application.leaveBalance.DTO.LeaveBalanceDTO;
+import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceJpa;
 
 public class LeaveBalanceMapper {
 

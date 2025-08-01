@@ -1,10 +1,11 @@
-package staffs.leavemanagement.application.leaveBalance;
+package staffs.staffleave.application.leaveBalance;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import staffs.leavemanagement.application.leaveBalance.DTO.LeaveBalanceDTO;
-import staffs.leavemanagement.infrastructure.leaveBalance.LeaveBalanceJpa;
-import staffs.leavemanagement.infrastructure.leaveBalance.LeaveBalanceRepository;
+import staffs.staffleave.application.leaveBalance.DTO.LeaveBalanceDTO;
+import staffs.staffleave.application.leaveBalance.LeaveBalanceMapper;
+import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceJpa;
+import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceRepository;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package staffs.leavemanagement.application.leaveRequest.DTO;
+package staffs.leavemanagement.application.leaveApproval.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -11,11 +11,11 @@ import java.util.Date;
 @EqualsAndHashCode
 @Getter
 @ToString
-public class LeaveRequestDTO {
+public class LeaveApprovalDTO {
     private String id;
-    private String staffId;
+    private String leaveId;
+    private String approverId;
     private String status;
-    private Date startDate;
-    private Date endDate;
-    private Float leaveAmount;
+    private String reason;
+    private Date approved_at;
 }

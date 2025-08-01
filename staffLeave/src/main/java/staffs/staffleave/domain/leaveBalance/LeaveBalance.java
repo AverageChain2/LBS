@@ -1,21 +1,20 @@
-package staffs.leavemanagement.domain.leaveRequest;
+package staffs.staffleave.domain.leaveBalance;
 
+import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
 
-import lombok.ToString;
-
 @ToString
-public class LeaveRequest extends Entity {
+public class LeaveBalance extends Entity {
 
-    public LeaveRequest(Identity id) {
+    public LeaveBalance(Identity id) {
         super(id);
     }
     //Inherits equals (id)
 
     //Factory method for testing
-    public static LeaveRequest leaveRequestOf(Identity id){
-        return new LeaveRequest(id);
+    public static LeaveBalance leaveBalanceOf(Identity id){
+        return new LeaveBalance(id);
     }
 
     //Domain methods to access attributes using domain language rather than get

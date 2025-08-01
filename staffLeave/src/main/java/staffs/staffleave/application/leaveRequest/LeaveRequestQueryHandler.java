@@ -1,10 +1,11 @@
-package staffs.leavemanagement.application.leaveRequest;
+package staffs.staffleave.application.leaveRequest;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import staffs.leavemanagement.application.leaveRequest.DTO.LeaveRequestDTO;
-import staffs.leavemanagement.infrastructure.leaveRequest.LeaveRequestJpa;
-import staffs.leavemanagement.infrastructure.leaveRequest.LeaveRequestRepository;
+import staffs.staffleave.application.leaveRequest.DTO.LeaveRequestDTO;
+import staffs.staffleave.application.leaveRequest.LeaveRequestMapper;
+import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
+import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestRepository;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package staffs.leavemanagement.infrastructure.leaveBalance;
+package staffs.staffleave.infrastructure.leaveBalance;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,8 +7,6 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.util.Date;
 
 @Entity(name = "leaveBalance")
 @Table(name = "leaveBalance")

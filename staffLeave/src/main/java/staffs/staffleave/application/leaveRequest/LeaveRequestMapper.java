@@ -1,8 +1,8 @@
-package staffs.leavemanagement.application.leaveRequest;
+package staffs.staffleave.application.leaveRequest;
 
 
-import staffs.leavemanagement.application.leaveRequest.DTO.LeaveRequestDTO;
-import staffs.leavemanagement.infrastructure.leaveRequest.LeaveRequestJpa;
+import staffs.staffleave.application.leaveRequest.DTO.LeaveRequestDTO;
+import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
 
 public class LeaveRequestMapper {
 

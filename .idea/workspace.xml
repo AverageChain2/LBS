@@ -4,31 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Start of application">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/AddressDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/AssertionConcern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/FullName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/IdentifiedValueObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Identity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Money.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/UniqueIDFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/ValueObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/staffs/lbs/LbsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/staffs/lbs/LbsApplicationTests.java" beforeDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Added leaveRequest and leaveBalance">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalApplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveApproval/LeaveApprovalDomainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveApproval/LeaveApprovalRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/LeaveApprovalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/leaveApproval/AddNewLeaveApprovalCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/leaveApproval/LeaveApprovalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/DTO/LeaveBalanceDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceQueryHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveBalance/LeaveBalance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveBalance/LeaveBalanceJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveBalance/DTO/LeaveBalanceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/DTO/LeaveApprovalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveBalance/LeaveBalanceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveBalance/LeaveBalanceQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalQueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveRequest/DTO/LeaveRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/DTO/LeaveRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveRequest/LeaveRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveRequest/LeaveRequestQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestQueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveBalance/LeaveBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveApproval/LeaveApproval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveRequest/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveBalance/LeaveBalanceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveApproval/LeaveApprovalJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveBalance/LeaveBalanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveBalance/LeaveBalanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveRequest/LeaveRequestJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveRequest/LeaveRequestJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveRequest/LeaveRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveRequest/LeaveRequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,12 +87,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.LbsApplication.executor": "Run",
+    "Spring Boot.LeaveManagementApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS",
+    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS/staffLeave/src/main/java/staffs/staffleave",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,10 +114,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave" />
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\leaveManagement\src\main\java\staffs\leavemanagement\infrastructure\leaveBalance" />
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\leaveManagement\src\main\java\staffs\leavemanagement\application\leaveBalance" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\common\src\main\java\staffs\common" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="staffs.leavemanagement.ui" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="staffs.leavemanagement.domain.leaveBalance" />
+      <recent name="staffs.leavemanagement" />
       <recent name="staffs.common" />
     </key>
   </component>
@@ -104,53 +139,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LbsApplication">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="common" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="common" />
-      <option name="filePath" />
+  <component name="RunManager" selected="Spring Boot.LeaveManagementApplication">
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#2" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="common" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#3" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="common" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
+    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#4" index="4" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -185,55 +181,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="common" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="common" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="common" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #4" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.generated-requests | #3" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -253,6 +207,7 @@
       <workItem from="1753447760841" duration="4717000" />
       <workItem from="1753804274892" duration="1384000" />
       <workItem from="1753805682307" duration="335000" />
+      <workItem from="1753806029641" duration="17364000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -262,7 +217,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753802955059</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added modules for aggregates">
+      <option name="closed" value="true" />
+      <created>1753806822477</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753806822477</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added leaveRequest and leaveBalance">
+      <option name="closed" value="true" />
+      <created>1753823122118</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753823122118</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +252,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start of application" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start of application" />
+    <MESSAGE value="Added modules for aggregates" />
+    <MESSAGE value="Added leaveRequest and leaveBalance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added leaveRequest and leaveBalance" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
