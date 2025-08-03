@@ -14,7 +14,6 @@ import java.util.Date;
 public class LeaveRequestDTO {
     private String id;
     private String staffId;
-    private String status;
     private Date startDate;
     private Date endDate;
     private Float leaveAmount;

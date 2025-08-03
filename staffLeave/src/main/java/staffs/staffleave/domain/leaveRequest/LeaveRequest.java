@@ -4,23 +4,52 @@ import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
 
+import java.util.Date;
+
 @ToString
 public class LeaveRequest extends Entity {
 
-    public LeaveRequest(Identity id) {
+    private String staffId;
+    private final Date startDate;
+    private final Date endDate;
+    private final Float leaveAmount;
+
+    public LeaveRequest(Identity id, String staffId, Date startDate, Date endDate, Float leaveAmount) {
         super(id);
-    }
-    //Inherits equals (id)
-
-    //Factory method for testing
-    public static LeaveRequest leaveRequestOf(Identity id){
-        return new LeaveRequest(id);
+        setStaffId(staffId);
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.leaveAmount = leaveAmount;
     }
 
-    //Domain methods to access attributes using domain language rather than get
-    public Identity id(){
+    // Factory method for testing
+    public static LeaveRequest leaveRequestOf(Identity id, String staffId, Date startDate, Date endDate, Float leaveAmount) {
+        return new LeaveRequest(id, staffId, startDate, endDate, leaveAmount);
+    }
+
+    private void setStaffId(String staffId) {
+        assertArgumentNotEmpty(staffId, "Staff ID cannot be empty");
+        this.staffId = staffId;
+    }
+
+    // Domain methods
+    public Identity id() {
         return id;
     }
 
+    public String staffID() {
+        return staffId;
+    }
 
+    public Date startDate() {
+        return startDate;
+    }
+
+    public Date endDate() {
+        return endDate;
+    }
+
+    public Float leaveAmount() {
+        return leaveAmount;
+    }
 }

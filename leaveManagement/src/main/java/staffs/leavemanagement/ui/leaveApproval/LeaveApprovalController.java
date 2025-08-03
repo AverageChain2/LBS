@@ -51,8 +51,8 @@ public class LeaveApprovalController {
     /**
      * POST /leave-approvals
      {
-     "leaveId": "0000",
-     "approverId": "0000",
+     "leaveId": "86080e1c-8cb4-4777-9129-feaa485bbdfd",
+     "approverId": "86080e1c-8cb4-4777-9129-feaa485bbdfd",
      "status": "APPROVED",
      "reason": "Meets all leave policy requirements.",
      "approved_at": "2025-07-31T10:15:30Z"
