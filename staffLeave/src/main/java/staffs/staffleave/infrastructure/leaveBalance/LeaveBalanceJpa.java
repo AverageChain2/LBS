@@ -22,8 +22,8 @@ public class LeaveBalanceJpa {
     @Column(name = "staff_id")
     private String staffId;
 
-    @Column(name = "year")
-    private String year;
+    @Column(name = "leaveYear")
+    private String leaveYear;
 
     @Column(name = "balance")
     private Float balance;
@@ -33,15 +33,15 @@ public class LeaveBalanceJpa {
     }
 
     // Custom constructor
-    protected LeaveBalanceJpa(String id, String staffId, String year, Float balance) {
+    protected LeaveBalanceJpa(String id, String staffId, String leaveYear, Float balance) {
         this.id = id;
         this.staffId = staffId;
-        this.year = year;
+        this.leaveYear = leaveYear;
         this.balance = balance;
     }
 
     // Factory method
-    public static LeaveBalanceJpa leaveBalanceJpaOf(String id, String staffId, String year, Float balance) {
-        return new LeaveBalanceJpa(id, staffId, year, balance);
+    public static LeaveBalanceJpa leaveBalanceJpaOf(String id, String staffId, String leaveYear, Float balance) {
+        return new LeaveBalanceJpa(id, staffId, leaveYear, balance);
     }
 }

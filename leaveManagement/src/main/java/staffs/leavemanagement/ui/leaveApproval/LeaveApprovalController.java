@@ -2,10 +2,7 @@ package staffs.leavemanagement.ui.leaveApproval;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-import staffs.leavemanagement.application.leaveApproval.DTO.LeaveApprovalDTO;
 import staffs.leavemanagement.application.leaveApproval.LeaveApprovalApplicationService;
 import staffs.leavemanagement.application.leaveApproval.LeaveApprovalQueryHandler;
 import staffs.leavemanagement.domain.leaveApproval.LeaveApprovalDomainException;

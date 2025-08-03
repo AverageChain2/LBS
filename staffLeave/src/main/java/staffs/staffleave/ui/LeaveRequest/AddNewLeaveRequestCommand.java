@@ -16,7 +16,7 @@ public class AddNewLeaveRequestCommand {
     @Override
     public String toString() {
         return String.format(
-                "\nStaff ID: %s, Status: %s, Start Date: %s, End Date: %s, Leave Amount: %.2f",
+                "\nStaff ID: %s Start Date: %s, End Date: %s, Leave Amount: %.2f",
                 staffId,
                 startDate,
                 endDate,

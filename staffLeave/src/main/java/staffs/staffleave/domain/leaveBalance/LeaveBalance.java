@@ -7,20 +7,41 @@ import staffs.common.domain.Identity;
 @ToString
 public class LeaveBalance extends Entity {
 
-    public LeaveBalance(Identity id) {
+    private String staffId;
+    private final String leaveYear;
+    private final Float balance;
+
+    public LeaveBalance(Identity id, String staffId, String leaveYear, Float balance) {
         super(id);
-    }
-    //Inherits equals (id)
-
-    //Factory method for testing
-    public static LeaveBalance leaveBalanceOf(Identity id){
-        return new LeaveBalance(id);
+        setStaffId(staffId);
+        this.leaveYear = leaveYear;
+        this.balance = balance;
     }
 
-    //Domain methods to access attributes using domain language rather than get
-    public Identity id(){
+    // Factory method for testing
+    public static LeaveBalance leaveBalanceOf(Identity id, String staffId, String leaveYear, Float balance) {
+        return new LeaveBalance(id, staffId, leaveYear, balance);
+    }
+
+    private void setStaffId(String staffId) {
+        assertArgumentNotEmpty(staffId, "Staff ID cannot be empty");
+        this.staffId = staffId;
+    }
+
+    // Domain methods
+    public Identity id() {
         return id;
     }
 
+    public String staffID() {
+        return staffId;
+    }
 
+    public String leaveYear() {
+        return leaveYear;
+    }
+
+    public Float balance() {
+        return balance;
+    }
 }

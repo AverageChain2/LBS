@@ -12,6 +12,6 @@ import lombok.ToString;
 public class LeaveBalanceDTO {
     private String id;
     private String staffId;
-    private String year;
+    private String leaveYear;
     private Float balance;
 }

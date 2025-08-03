@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Working Leave Approval Add and get routes">
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestApplicationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequestDomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/AddNewLeaveRequestCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/LeaveRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/DTO/LeaveRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/DTO/LeaveRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" afterDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Working Leave request Add and get routes">
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceApplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveBalance/LeaveBalanceDomainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveBalance/AddNewLeaveBalanceCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveBalance/LeaveBalanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/leaveApproval/LeaveApprovalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/leaveApproval/LeaveApprovalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/DTO/LeaveBalanceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/DTO/LeaveBalanceDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveBalance/LeaveBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveBalance/LeaveBalance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveBalance/LeaveBalanceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveBalance/LeaveBalanceJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/AddNewLeaveRequestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/AddNewLeaveRequestCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -68,6 +75,9 @@
     "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -81,7 +91,7 @@
     "Spring Boot.StaffLeaveApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest",
+    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS/staffLeave/src/main/java/staffs/staffleave/ui/LeaveBalance",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,11 +104,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave\ui\LeaveBalance" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave\ui\LeaveRequest" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\leaveManagement\src\main\java\staffs\leavemanagement\infrastructure\leaveBalance" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\leaveManagement\src\main\java\staffs\leavemanagement\application\leaveBalance" />
-      <recent name="C:\Users\614876640\IdeaProjects\LBS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave\ui\" />
@@ -107,6 +117,7 @@
       <recent name="staffs.leavemanagement.ui" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="staffs.staffleave.domain.leaveBalance" />
       <recent name="staffs.staffleave.domain.leaveRequest" />
       <recent name="staffs.leavemanagement.domain.leaveBalance" />
       <recent name="staffs.leavemanagement" />
@@ -124,13 +135,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.StaffLeaveApplication">
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#2" index="2" runType="Run single request">
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#5" index="5" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#3" index="3" runType="Run single request">
+    <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#6" index="6" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#4" index="4" runType="Run single request">
+    <configuration name="generated-requests | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#7" index="7" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #8" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#8" index="8" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #9" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#9" index="9" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -167,9 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #3" />
-        <item itemvalue="HTTP Request.generated-requests | #4" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.generated-requests | #9" />
+        <item itemvalue="HTTP Request.generated-requests | #8" />
+        <item itemvalue="HTTP Request.generated-requests | #7" />
+        <item itemvalue="HTTP Request.generated-requests | #6" />
+        <item itemvalue="HTTP Request.generated-requests | #5" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +210,7 @@
       <workItem from="1753447760841" duration="4717000" />
       <workItem from="1753804274892" duration="1384000" />
       <workItem from="1753805682307" duration="335000" />
-      <workItem from="1753806029641" duration="21591000" />
+      <workItem from="1753806029641" duration="23336000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -225,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754054569322</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Working Leave request Add and get routes">
+      <option name="closed" value="true" />
+      <created>1754218444232</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1754218444232</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +274,8 @@
     <MESSAGE value="Added modules for aggregates" />
     <MESSAGE value="Added leaveRequest and leaveBalance" />
     <MESSAGE value="Working Leave Approval Add and get routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working Leave Approval Add and get routes" />
+    <MESSAGE value="Working Leave request Add and get routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Leave request Add and get routes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
