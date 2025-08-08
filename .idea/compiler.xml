@@ -3,19 +3,22 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for staffLeave" enabled="true">
+      <profile name="Annotation profile for using" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="leaveManagement" />
         <module name="common" />
         <module name="LBS" />
         <module name="staffLeave" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="leaveManagement" target="24" />
+      <module name="using" target="24" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -23,6 +26,7 @@
       <module name="common" options="-parameters" />
       <module name="leaveManagement" options="-parameters" />
       <module name="staffLeave" options="-parameters" />
+      <module name="using" options="-parameters" />
     </option>
   </component>
 </project>

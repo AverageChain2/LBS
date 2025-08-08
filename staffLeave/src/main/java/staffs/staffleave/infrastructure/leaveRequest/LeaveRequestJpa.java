@@ -1,12 +1,10 @@
 package staffs.staffleave.infrastructure.leaveRequest;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.util.Date;
 
@@ -21,11 +19,9 @@ public class LeaveRequestJpa {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "staff_id")
-    private String staffId;
-
-    @Column(name = "status")
-    private String status;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "staff_id")
+    private UserJpa staffID;
 
     @Column(name = "start_date")
     private Date startDate;
@@ -41,17 +37,16 @@ public class LeaveRequestJpa {
     }
 
     // Custom constructor
-    protected LeaveRequestJpa(String id, String staffId, String status, Date startDate, Date endDate, Float leaveAmount) {
+    protected LeaveRequestJpa(String id, UserJpa staffID, Date startDate, Date endDate, Float leaveAmount) {
         this.id = id;
-        this.staffId = staffId;
-        this.status = status;
+        this.staffID = staffID;
         this.startDate = startDate;
         this.endDate = endDate;
         this.leaveAmount = leaveAmount;
     }
 
     // Factory method
-    public static LeaveRequestJpa leaveRequestJpaOf(String id, String staffId, String status, Date startDate, Date endDate, Float leaveAmount) {
-        return new LeaveRequestJpa(id, staffId, status, startDate, endDate, leaveAmount);
+    public static LeaveRequestJpa leaveRequestJpaOf(String id, UserJpa staffId, Date startDate, Date endDate, Float leaveAmount) {
+        return new LeaveRequestJpa(id, staffId, startDate, endDate, leaveAmount);
     }
 }

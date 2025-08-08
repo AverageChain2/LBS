@@ -1,4 +1,4 @@
-package staffs.leavemanagement.application.leaveApproval;
+package staffs.staffleave.application.leaveApproval;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -7,15 +7,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
-import staffs.leavemanagement.domain.leaveApproval.LeaveApproval;
-import staffs.leavemanagement.domain.leaveApproval.LeaveApprovalDomainException;
-import staffs.leavemanagement.infrastructure.leaveApproval.LeaveApprovalJpa;
-import staffs.leavemanagement.infrastructure.leaveApproval.LeaveApprovalRepository;
-import staffs.leavemanagement.ui.leaveApproval.AddNewLeaveApprovalCommand;
+import staffs.staffleave.domain.leaveApproval.LeaveApproval;
+import staffs.staffleave.domain.leaveApproval.LeaveApprovalDomainException;
+import staffs.staffleave.infrastructure.leaveApproval.LeaveApprovalRepository;
+import staffs.staffleave.ui.leaveApproval.AddNewLeaveApprovalCommand;
 
-import java.util.Optional;
-import staffs.leavemanagement.domain.leaveApproval.LeaveApprovalDomainException;
-import staffs.leavemanagement.domain.leaveApproval.LeaveApproval;
 
 @Service
 @RequiredArgsConstructor

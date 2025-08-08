@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
+import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.util.Date;
 
@@ -13,7 +14,7 @@ import java.util.Date;
 @ToString
 public class LeaveRequestDTO {
     private String id;
-    private String staffId;
+    private UserJpa staffId;
     private Date startDate;
     private Date endDate;
     private Float leaveAmount;

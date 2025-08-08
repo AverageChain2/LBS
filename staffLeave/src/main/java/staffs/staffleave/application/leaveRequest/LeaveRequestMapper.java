@@ -11,7 +11,7 @@ public class LeaveRequestMapper {
     public static LeaveRequestDTO toLeaveRequestDTO(LeaveRequestJpa leaveRequest) {
         return new LeaveRequestDTO(
                 leaveRequest.getId(),
-                leaveRequest.getStaffId(),
+                leaveRequest.getStaffID(),
                 leaveRequest.getStartDate(),
                 leaveRequest.getEndDate(),
                 leaveRequest.getLeaveAmount()
@@ -22,7 +22,7 @@ public class LeaveRequestMapper {
     public static LeaveRequestJpa toJpa(LeaveRequest leaveRequest) {
         LeaveRequestJpa jpa = new LeaveRequestJpa();
         jpa.setId(leaveRequest.id().id());
-        jpa.setStaffId(leaveRequest.staffID());
+        jpa.setStaffID(leaveRequest.staffID());
         jpa.setStartDate(leaveRequest.startDate());
         jpa.setEndDate(leaveRequest.endDate());
         jpa.setLeaveAmount(leaveRequest.leaveAmount());
@@ -33,7 +33,7 @@ public class LeaveRequestMapper {
     public static LeaveRequest toDomain(LeaveRequestJpa jpa) {
         return new LeaveRequest(
                 new Identity(jpa.getId()),
-                jpa.getStaffId(),
+                jpa.getStaffID(),
                 jpa.getStartDate(),
                 jpa.getEndDate(),
                 jpa.getLeaveAmount()
