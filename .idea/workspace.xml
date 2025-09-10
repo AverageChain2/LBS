@@ -4,42 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Working Leave balance Add and get routes">
-      <change afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveApproval/LeaveStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveApproval/DTO/LeaveApprovalDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveApproval/LeaveApprovalApplicationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveApproval/LeaveApprovalMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveApproval/LeaveApprovalQueryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/DTO/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserApplicationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserQueryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveApproval/LeaveApproval.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveApproval/LeaveApprovalDomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveApproval/LeaveStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/user/UserDomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/user/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveApproval/LeaveApprovalJpa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveApproval/LeaveApprovalRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/user/UserJpa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/user/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveApprovalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/leaveApproval/AddNewLeaveApprovalCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/leaveApproval/LeaveApprovalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/AddNewUserCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/UserController.java" afterDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Working User">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/LeaveManagementApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/DTO/LeaveApprovalDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalApplicationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/application/leaveApproval/LeaveApprovalQueryHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveApproval/LeaveApproval.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveApproval/LeaveApprovalDomainException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/domain/leaveApproval/LeaveStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveApproval/LeaveApprovalJpa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/infrastructure/leaveApproval/LeaveApprovalRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/LeaveApprovalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/leaveApproval/AddNewLeaveApprovalCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/java/staffs/leavemanagement/ui/leaveApproval/LeaveApprovalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveManagement/src/test/java/staffs/leavemanagement/LeaveManagementApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/DTO/LeaveRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/DTO/LeaveRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestApplicationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveRequest/LeaveRequestJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/leaveRequest/LeaveRequestJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/AddNewLeaveRequestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/AddNewLeaveRequestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/user/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +93,12 @@
     "HTTP Request.generated-requests | #13.executor": "Run",
     "HTTP Request.generated-requests | #14.executor": "Run",
     "HTTP Request.generated-requests | #15.executor": "Run",
+    "HTTP Request.generated-requests | #16.executor": "Run",
+    "HTTP Request.generated-requests | #17.executor": "Run",
+    "HTTP Request.generated-requests | #18.executor": "Run",
+    "HTTP Request.generated-requests | #19.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #20.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | #4.executor": "Run",
     "HTTP Request.generated-requests | #5.executor": "Run",
@@ -170,16 +167,16 @@
     <configuration name="generated-requests | #13" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#13" index="13" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #14" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#14" index="14" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #15" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#15" index="15" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="generated-requests | #16" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#16" index="16" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #17" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#17" index="17" runType="Run single request">
+    <configuration name="generated-requests | #18" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#18" index="18" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #19" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#19" index="19" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #20" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#20" index="20" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -224,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #17" />
+        <item itemvalue="HTTP Request.generated-requests | #20" />
+        <item itemvalue="HTTP Request.generated-requests | #19" />
+        <item itemvalue="HTTP Request.generated-requests | #18" />
         <item itemvalue="HTTP Request.generated-requests | #16" />
         <item itemvalue="HTTP Request.generated-requests | #13" />
-        <item itemvalue="HTTP Request.generated-requests | #15" />
-        <item itemvalue="HTTP Request.generated-requests | #14" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +247,8 @@
       <workItem from="1753447760841" duration="4717000" />
       <workItem from="1753804274892" duration="1384000" />
       <workItem from="1753805682307" duration="335000" />
-      <workItem from="1753806029641" duration="45293000" />
+      <workItem from="1753806029641" duration="47386000" />
+      <workItem from="1757508258617" duration="2100000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -300,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754220209802</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Working User">
+      <option name="closed" value="true" />
+      <created>1754654705737</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1754654705737</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +330,8 @@
     <MESSAGE value="Working Leave Approval Add and get routes" />
     <MESSAGE value="Working Leave request Add and get routes" />
     <MESSAGE value="Working Leave balance Add and get routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working Leave balance Add and get routes" />
+    <MESSAGE value="Working User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working User" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

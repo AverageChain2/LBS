@@ -5,29 +5,44 @@ import staffs.common.domain.Identity;
 import staffs.staffleave.application.leaveRequest.DTO.LeaveRequestDTO;
 import staffs.staffleave.domain.leaveRequest.LeaveRequest;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
+import staffs.staffleave.infrastructure.user.UserJpa;
+import staffs.staffleave.infrastructure.user.UserRepository;
 
 public class LeaveRequestMapper {
 
-    public static LeaveRequestDTO toLeaveRequestDTO(LeaveRequestJpa leaveRequest) {
-        return new LeaveRequestDTO(
-                leaveRequest.getId(),
-                leaveRequest.getStaffID(),
-                leaveRequest.getStartDate(),
-                leaveRequest.getEndDate(),
-                leaveRequest.getLeaveAmount()
+
+
+
+
+        public static LeaveRequestDTO toLeaveRequestDTO(LeaveRequestJpa leaveRequest) {
+            return new LeaveRequestDTO(
+                    leaveRequest.getId(),
+                    leaveRequest.getStaffID().getId(), // assuming getId() returns String
+                    leaveRequest.getStartDate(),
+                    leaveRequest.getEndDate(),
+                    leaveRequest.getLeaveAmount()
+            );
+        }
+
+
+
+    // Domain to JPA
+
+
+    public static LeaveRequestJpa toJpa(LeaveRequest leaveRequest, UserRepository userRepository) {
+        UserJpa staff = userRepository.findById(leaveRequest.staffID().getId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        return LeaveRequestJpa.leaveRequestJpaOf(
+                leaveRequest.id().id(),
+                staff,
+                leaveRequest.startDate(),
+                leaveRequest.endDate(),
+                leaveRequest.leaveAmount()
         );
     }
 
-    // Domain to JPA
-    public static LeaveRequestJpa toJpa(LeaveRequest leaveRequest) {
-        LeaveRequestJpa jpa = new LeaveRequestJpa();
-        jpa.setId(leaveRequest.id().id());
-        jpa.setStaffID(leaveRequest.staffID());
-        jpa.setStartDate(leaveRequest.startDate());
-        jpa.setEndDate(leaveRequest.endDate());
-        jpa.setLeaveAmount(leaveRequest.leaveAmount());
-        return jpa;
-    }
+
 
     // JPA to Domain
     public static LeaveRequest toDomain(LeaveRequestJpa jpa) {

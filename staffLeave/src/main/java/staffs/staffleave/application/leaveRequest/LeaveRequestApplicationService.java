@@ -11,6 +11,7 @@ import staffs.common.domain.UniqueIDFactory;
 import staffs.staffleave.domain.leaveRequest.LeaveRequest;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestRepository;
+import staffs.staffleave.infrastructure.user.UserRepository;
 import staffs.staffleave.ui.LeaveRequest.AddNewLeaveRequestCommand;
 
 @Service
@@ -18,6 +19,8 @@ import staffs.staffleave.ui.LeaveRequest.AddNewLeaveRequestCommand;
 public class LeaveRequestApplicationService {
 
     private final LeaveRequestRepository leaveRequestRepository;
+    private final UserRepository userRepository; // Add this
+
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @Transactional
@@ -27,7 +30,7 @@ public class LeaveRequestApplicationService {
         try {
             Identity idOfNewLeaveRequest = UniqueIDFactory.createID();
             LOG.info("New leave request id is {}", idOfNewLeaveRequest);
-            //Pass info to aggregate to validate (including other fields from command required by aggregate)
+
             LeaveRequest newRequest = new LeaveRequest(
                     idOfNewLeaveRequest,
                     command.getStaffId(),
@@ -36,7 +39,7 @@ public class LeaveRequestApplicationService {
                     command.getLeaveAmount()
             );
 
-            leaveRequestRepository.save(LeaveRequestMapper.toJpa(newRequest));
+            leaveRequestRepository.save(LeaveRequestMapper.toJpa(newRequest, userRepository));
             LOG.info("Leave request created with ID: {}", idOfNewLeaveRequest);
 
         } catch (IllegalArgumentException e) {
@@ -45,3 +48,5 @@ public class LeaveRequestApplicationService {
         }
     }
 }
+
+
