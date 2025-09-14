@@ -24,6 +24,7 @@ public class UserJpa {
     @Column(name = "surname")
     private String surname;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private UserRole role;
 

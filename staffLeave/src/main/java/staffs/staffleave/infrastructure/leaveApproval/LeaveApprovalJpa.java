@@ -11,7 +11,7 @@ import staffs.staffleave.infrastructure.user.UserJpa;
 import java.util.Date;
 
 @Entity(name = "leaveApproval")
-@Table(name = "leaveApproval")
+@Table(name = "leave_approval")
 @ToString
 @Getter
 @Setter
@@ -29,6 +29,7 @@ public class LeaveApprovalJpa {
     @JoinColumn(name = "approver_id", referencedColumnName = "id")
     private UserJpa approverId;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private LeaveStatus status;
 

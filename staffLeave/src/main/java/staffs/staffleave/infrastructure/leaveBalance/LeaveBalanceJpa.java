@@ -9,7 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity(name = "leaveBalance")
-@Table(name = "leaveBalance")
+@Table(name = "leave_balance")
 @ToString
 @Getter
 @Setter

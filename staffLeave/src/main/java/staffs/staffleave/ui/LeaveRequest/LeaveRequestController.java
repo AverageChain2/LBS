@@ -3,17 +3,21 @@ package staffs.staffleave.ui.LeaveRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import staffs.staffleave.application.leaveApproval.LeaveApprovalApplicationService;
 import staffs.staffleave.application.leaveRequest.LeaveRequestApplicationService;
 import staffs.staffleave.application.leaveRequest.LeaveRequestQueryHandler;
+import staffs.staffleave.domain.leaveApproval.LeaveApprovalDomainException;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
+import staffs.staffleave.ui.leaveApproval.UpdateLeaveStatusCommand;
 
 @RestController
-@RequestMapping("/leave-requests")
+@RequestMapping("/leaveRequests")
 @RequiredArgsConstructor
 public class LeaveRequestController {
 
     private final LeaveRequestQueryHandler queryHandler;
     private final LeaveRequestApplicationService applicationService;
+    private final LeaveApprovalApplicationService leaveApprovalApplicationService;
 
     /**
      * GET /leave-requests
@@ -53,4 +57,11 @@ public class LeaveRequestController {
     //     applicationService.deleteLeaveRequest(id);
     //     return ResponseEntity.noContent().build();
     // }
+
+    @PostMapping("/updateStatus")
+    public HttpStatus updateStatus(@RequestBody UpdateLeaveStatusCommand command)
+            throws  LeaveApprovalDomainException {
+        leaveApprovalApplicationService.updateStatus(command);
+        return HttpStatus.ACCEPTED;
+    }
 }

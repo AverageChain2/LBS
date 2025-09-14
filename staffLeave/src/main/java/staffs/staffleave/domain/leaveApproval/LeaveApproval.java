@@ -3,6 +3,9 @@ package staffs.staffleave.domain.leaveApproval;
 import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
+import staffs.staffleave.domain.leaveApproval.events.LeaveApprovedEvent;
+import staffs.staffleave.domain.leaveApproval.events.LeaveCancelledEvent;
+import staffs.staffleave.domain.leaveApproval.events.LeaveRejectedEvent;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
 import staffs.staffleave.infrastructure.user.UserJpa;
 
@@ -13,9 +16,9 @@ public class LeaveApproval extends Entity {
 
     private LeaveRequestJpa leaveID;
     private UserJpa approverID;
-    private final LeaveStatus status;
-    private final String reason;
-    private final Date approvedAt;
+    private LeaveStatus status;
+    private String reason;
+    private Date approvedAt;
 
     public LeaveApproval(Identity id, LeaveRequestJpa leaveID, UserJpa approverID, LeaveStatus status, String reason, Date approvedAt) {
         super(id);
@@ -32,6 +35,26 @@ public class LeaveApproval extends Entity {
     public static LeaveApproval leaveApprovalOf(Identity id, LeaveRequestJpa leaveID, UserJpa approverID, LeaveStatus status, String reason, Date approvedAt) {
         return new LeaveApproval(id, leaveID, approverID, status, reason, approvedAt);
     }
+
+    public void updateStatus(LeaveStatus newStatus, UserJpa approverID, String newReason, Date newApprovedAt) {
+        if (this.status != newStatus) {
+            switch (newStatus) {
+                case Approved -> addDomainEvent(new LeaveApprovedEvent(id, new Identity(leaveID.getId()), approverID, newReason));
+                case Rejected -> addDomainEvent(new LeaveRejectedEvent(id, new Identity(leaveID.getId()), approverID, newReason));
+                case Cancelled -> addDomainEvent(new LeaveCancelledEvent(id, new Identity(leaveID.getId())));
+            }
+        }
+
+        // Update fields
+        this.status = newStatus;
+        this.reason = newReason;
+        this.approverID = approverID;
+        this.approvedAt = newApprovedAt;
+
+    }
+
+
+
 
     private void setLeaveID(LeaveRequestJpa leaveID){
         assertArgumentNotEmpty(leaveID,"LeaveID cannot be empty");

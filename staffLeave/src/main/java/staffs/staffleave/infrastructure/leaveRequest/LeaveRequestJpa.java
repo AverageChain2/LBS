@@ -9,7 +9,7 @@ import staffs.staffleave.infrastructure.user.UserJpa;
 import java.util.Date;
 
 @Entity(name = "leaveRequest")
-@Table(name = "leaveRequest")
+@Table(name = "leave_request")
 @ToString
 @Getter
 @Setter
