@@ -18,6 +18,7 @@ public class LeaveRequestController {
     private final LeaveRequestQueryHandler queryHandler;
     private final LeaveRequestApplicationService applicationService;
     private final LeaveApprovalApplicationService leaveApprovalApplicationService;
+    private final LeaveRequestApplicationService leaveRequestApplicationService;
 
     /**
      * GET /leave-requests
@@ -60,8 +61,8 @@ public class LeaveRequestController {
 
     @PostMapping("/updateStatus")
     public HttpStatus updateStatus(@RequestBody UpdateLeaveStatusCommand command)
-            throws  LeaveApprovalDomainException {
-        leaveApprovalApplicationService.updateStatus(command);
+            throws  LeaveRequestDomainException {
+        leaveRequestApplicationService.updateStatus(command);
         return HttpStatus.ACCEPTED;
     }
 }

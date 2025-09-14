@@ -12,11 +12,9 @@ import java.time.LocalDate;
 public class LeaveCancelledEvent implements LocalEvent {
     private final Identity aggregateID;
     private final String occurredOn;
-    private final Identity leaveRequestID;
 
-    public LeaveCancelledEvent(Identity aggregateID, Identity leaveRequestID) {
+    public LeaveCancelledEvent(Identity aggregateID) {
         this.aggregateID = aggregateID;
-        this.leaveRequestID = leaveRequestID;
         this.occurredOn = LocalDate.now().toString();
     }
 }

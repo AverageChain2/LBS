@@ -2,14 +2,12 @@ package staffs.staffleave.ui.LeaveRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import staffs.staffleave.infrastructure.user.UserJpa;
-
 import java.util.Date;
 
 @Getter
 @AllArgsConstructor
 public class AddNewLeaveRequestCommand {
-    private UserJpa staffId;
+    private String staffId;
     private Date startDate;
     private Date endDate;
     private Float leaveAmount;

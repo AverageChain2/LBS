@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.ToString;
 import staffs.common.domain.Identity;
 import staffs.common.events.LocalEvent;
-import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
-import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.time.LocalDate;
 
@@ -14,14 +12,10 @@ import java.time.LocalDate;
 public class LeaveApprovedEvent implements LocalEvent {
     private final Identity aggregateID;
     private final String occurredOn;
-    private final Identity leaveRequestID;
-    private final UserJpa approver;
     private final String reason;
 
-    public LeaveApprovedEvent(Identity aggregateID, Identity leaveRequestID, UserJpa approver, String reason) {
+    public LeaveApprovedEvent(Identity aggregateID, String reason) {
         this.aggregateID = aggregateID;
-        this.leaveRequestID = leaveRequestID;
-        this.approver = approver;
         this.reason = reason;
         this.occurredOn = LocalDate.now().toString();
     }

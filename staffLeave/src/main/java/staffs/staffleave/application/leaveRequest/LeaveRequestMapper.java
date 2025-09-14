@@ -5,8 +5,6 @@ import staffs.common.domain.Identity;
 import staffs.staffleave.application.leaveRequest.DTO.LeaveRequestDTO;
 import staffs.staffleave.domain.leaveRequest.LeaveRequest;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
-import staffs.staffleave.infrastructure.user.UserJpa;
-import staffs.staffleave.infrastructure.user.UserRepository;
 
 public class LeaveRequestMapper {
 
@@ -17,10 +15,12 @@ public class LeaveRequestMapper {
         public static LeaveRequestDTO toLeaveRequestDTO(LeaveRequestJpa leaveRequest) {
             return new LeaveRequestDTO(
                     leaveRequest.getId(),
-                    leaveRequest.getStaffID().getId(), // assuming getId() returns String
+                    leaveRequest.getStaffID().getId(),
                     leaveRequest.getStartDate(),
                     leaveRequest.getEndDate(),
-                    leaveRequest.getLeaveAmount()
+                    leaveRequest.getLeaveAmount(),
+                    leaveRequest.getStatus().toString(),
+                    leaveRequest.getReason()
             );
         }
 
@@ -29,16 +29,18 @@ public class LeaveRequestMapper {
     // Domain to JPA
 
 
-    public static LeaveRequestJpa toJpa(LeaveRequest leaveRequest, UserRepository userRepository) {
-        UserJpa staff = userRepository.findById(leaveRequest.staffID().getId())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+    public static LeaveRequestJpa toJpa(LeaveRequest leaveRequest) {
+//        UserJpa staff = userRepository.findById(leaveRequest.staffID().getId())
+//                .orElseThrow(() -> new RuntimeException("User not found"));
 
         return LeaveRequestJpa.leaveRequestJpaOf(
                 leaveRequest.id().id(),
-                staff,
+                leaveRequest.staffID(),
                 leaveRequest.startDate(),
                 leaveRequest.endDate(),
-                leaveRequest.leaveAmount()
+                leaveRequest.leaveAmount(),
+                leaveRequest.status(),
+                leaveRequest.reason()
         );
     }
 
@@ -51,7 +53,9 @@ public class LeaveRequestMapper {
                 jpa.getStaffID(),
                 jpa.getStartDate(),
                 jpa.getEndDate(),
-                jpa.getLeaveAmount()
+                jpa.getLeaveAmount(),
+                jpa.getStatus(),
+                jpa.getReason()
         );
     }
 }

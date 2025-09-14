@@ -69,38 +69,38 @@ public class LeaveApprovalApplicationService {
 //        LeaveApproval approval = leaveApprovalRepository.findById(id)
 //    }
 
-    public void updateStatus(UpdateLeaveStatusCommand command) throws LeaveApprovalDomainException {
-        try {
-            //find approval id from leave id
-            Optional<LeaveApprovalJpa> leaveApprovalJpa = leaveApprovalRepository.findByLeaveRequest(command.getLeaveRequestID());
-            if (leaveApprovalJpa.isEmpty()) {
-                throw new LeaveApprovalDomainException("LeaveRequest id does not exist");
-            }
-
-
-            LeaveApprovalJpa existingJpa = leaveApprovalRepository.findById(leaveApprovalJpa.get().getId())
-                    .orElseThrow(() -> new LeaveApprovalDomainException("Leave approval not found: " + leaveApprovalJpa.get().getId()));
-
-            LeaveApproval approval = LeaveApprovalMapper.toDomain(existingJpa);
-
-            approval.updateStatus(
-                    command.getStatus(),
-                    command.getApproverId(),
-                    command.getReason(),
-                    new Date()
-            );
-
-            leaveApprovalRepository.save(LeaveApprovalMapper.toJpa(approval));
-
-            LOG.info("Leave approval updated with ID: {}", leaveApprovalJpa.get().getId());
-
-            localDomainEventManager.manageDomainEvents(this, approval.listOfDomainEvents());
-
-        } catch (IllegalArgumentException e) {
-            LOG.error("Error updating leave approval: {}", e.getMessage());
-            throw new LeaveApprovalDomainException(e.getMessage());
-        }
-    }
+//    public void updateStatus(UpdateLeaveStatusCommand command) throws LeaveApprovalDomainException {
+//        try {
+//            //find approval id from leave id
+//            Optional<LeaveApprovalJpa> leaveApprovalJpa = leaveApprovalRepository.findByLeaveRequest(command.getLeaveRequestID());
+//            if (leaveApprovalJpa.isEmpty()) {
+//                throw new LeaveApprovalDomainException("LeaveRequest id does not exist");
+//            }
+//
+//
+//            LeaveApprovalJpa existingJpa = leaveApprovalRepository.findById(leaveApprovalJpa.get().getId())
+//                    .orElseThrow(() -> new LeaveApprovalDomainException("Leave approval not found: " + leaveApprovalJpa.get().getId()));
+//
+//            LeaveApproval approval = LeaveApprovalMapper.toDomain(existingJpa);
+//
+//            approval.updateStatus(
+//                    command.getStatus(),
+//                    command.getApproverId(),
+//                    command.getReason(),
+//                    new Date()
+//            );
+//
+//            leaveApprovalRepository.save(LeaveApprovalMapper.toJpa(approval));
+//
+//            LOG.info("Leave approval updated with ID: {}", leaveApprovalJpa.get().getId());
+//
+//            localDomainEventManager.manageDomainEvents(this, approval.listOfDomainEvents());
+//
+//        } catch (IllegalArgumentException e) {
+//            LOG.error("Error updating leave approval: {}", e.getMessage());
+//            throw new LeaveApprovalDomainException(e.getMessage());
+//        }
+//    }
 
 
 

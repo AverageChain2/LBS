@@ -36,22 +36,22 @@ public class LeaveApproval extends Entity {
         return new LeaveApproval(id, leaveID, approverID, status, reason, approvedAt);
     }
 
-    public void updateStatus(LeaveStatus newStatus, UserJpa approverID, String newReason, Date newApprovedAt) {
-        if (this.status != newStatus) {
-            switch (newStatus) {
-                case Approved -> addDomainEvent(new LeaveApprovedEvent(id, new Identity(leaveID.getId()), approverID, newReason));
-                case Rejected -> addDomainEvent(new LeaveRejectedEvent(id, new Identity(leaveID.getId()), approverID, newReason));
-                case Cancelled -> addDomainEvent(new LeaveCancelledEvent(id, new Identity(leaveID.getId())));
-            }
-        }
-
-        // Update fields
-        this.status = newStatus;
-        this.reason = newReason;
-        this.approverID = approverID;
-        this.approvedAt = newApprovedAt;
-
-    }
+//    public void updateStatus(LeaveStatus newStatus, UserJpa approverID, String newReason, Date newApprovedAt) {
+//        if (this.status != newStatus) {
+//            switch (newStatus) {
+//                case Approved -> addDomainEvent(new LeaveApprovedEvent(id, new Identity(leaveID.getId()), approverID, newReason));
+//                case Rejected -> addDomainEvent(new LeaveRejectedEvent(id, new Identity(leaveID.getId()), approverID, newReason));
+//                case Cancelled -> addDomainEvent(new LeaveCancelledEvent(id, new Identity(leaveID.getId())));
+//            }
+//        }
+//
+//        // Update fields
+//        this.status = newStatus;
+//        this.reason = newReason;
+//        this.approverID = approverID;
+//        this.approvedAt = newApprovedAt;
+//
+//    }
 
 
 
