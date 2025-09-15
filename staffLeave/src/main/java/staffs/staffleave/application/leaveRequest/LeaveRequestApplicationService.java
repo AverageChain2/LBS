@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
-import staffs.staffleave.domain.leaveApproval.LeaveStatus;
+import staffs.staffleave.domain.leaveRequest.LeaveStatus;
 import staffs.staffleave.domain.leaveRequest.LeaveRequest;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
 import staffs.staffleave.application.LocalDomainEventManager;

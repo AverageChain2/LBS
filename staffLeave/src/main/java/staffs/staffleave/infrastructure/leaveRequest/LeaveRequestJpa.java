@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import staffs.staffleave.domain.leaveApproval.LeaveStatus;
+import staffs.staffleave.domain.leaveRequest.LeaveStatus;
 import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.util.Date;

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import staffs.staffleave.domain.leaveApproval.LeaveStatus;
+import staffs.staffleave.domain.leaveRequest.LeaveStatus;
 
 import java.util.Date;
 

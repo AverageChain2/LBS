@@ -44,13 +44,14 @@ public class LeaveBalanceController {
         return HttpStatus.CREATED;
     }
 
-    // Optional: GET by staff ID
+    // GET by staff ID
      @GetMapping("/staff/{staffId}")
      public Iterable<?> getLeaveBalanceByStaffId(@PathVariable String staffId) {
          return queryHandler.findLeaveBalancesByStaffId(staffId);
 //             .map(ResponseEntity::ok)
 //             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No leave balance found for staff ID: " + staffId));
      }
+    // GET by staff ID and year
     @GetMapping("/staff/{staffId}/year/{leaveYear}")
     public Optional<?> getLeaveBalanceByStaffId(@PathVariable String staffId, @PathVariable String leaveYear) {
         return queryHandler.findLeaveBalancesByStaffIdAndYear(staffId, leaveYear);

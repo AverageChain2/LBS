@@ -3,10 +3,6 @@ package staffs.staffleave.domain.leaveBalance;
 import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
-import staffs.staffleave.domain.events.LeaveApprovedEvent;
-import staffs.staffleave.domain.events.LeaveCancelledEvent;
-import staffs.staffleave.domain.events.LeaveRejectedEvent;
-import staffs.staffleave.domain.leaveApproval.LeaveStatus;
 
 @ToString
 public class LeaveBalance extends Entity {

@@ -3,7 +3,6 @@ package staffs.staffleave.ui.LeaveRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import staffs.staffleave.application.leaveApproval.LeaveApprovalApplicationService;
 import staffs.staffleave.application.leaveRequest.LeaveRequestApplicationService;
 import staffs.staffleave.application.leaveRequest.LeaveRequestQueryHandler;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
@@ -15,7 +14,6 @@ public class LeaveRequestController {
 
     private final LeaveRequestQueryHandler queryHandler;
     private final LeaveRequestApplicationService applicationService;
-    private final LeaveApprovalApplicationService leaveApprovalApplicationService;
     private final LeaveRequestApplicationService leaveRequestApplicationService;
 
     /**

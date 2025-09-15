@@ -3,7 +3,6 @@ package staffs.staffleave.domain.leaveRequest;
 import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
-import staffs.staffleave.domain.leaveApproval.LeaveStatus;
 import staffs.staffleave.domain.events.LeaveApprovedEvent;
 import staffs.staffleave.domain.events.LeaveCancelledEvent;
 import staffs.staffleave.domain.events.LeaveRejectedEvent;

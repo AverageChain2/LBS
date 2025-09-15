@@ -1,6 +1,6 @@
 package staffs.staffleave.ui.LeaveRequest;
 
-import staffs.staffleave.domain.leaveApproval.LeaveStatus;
+import staffs.staffleave.domain.leaveRequest.LeaveStatus;
 
 
 import lombok.Getter;
