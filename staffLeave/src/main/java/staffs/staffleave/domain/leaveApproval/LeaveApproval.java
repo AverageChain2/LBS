@@ -3,9 +3,6 @@ package staffs.staffleave.domain.leaveApproval;
 import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
-import staffs.staffleave.domain.leaveApproval.events.LeaveApprovedEvent;
-import staffs.staffleave.domain.leaveApproval.events.LeaveCancelledEvent;
-import staffs.staffleave.domain.leaveApproval.events.LeaveRejectedEvent;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
 import staffs.staffleave.infrastructure.user.UserJpa;
 

@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import staffs.staffleave.application.leaveApproval.LeaveApprovalApplicationService;
 import staffs.staffleave.application.leaveRequest.LeaveRequestApplicationService;
 import staffs.staffleave.application.leaveRequest.LeaveRequestQueryHandler;
-import staffs.staffleave.domain.leaveApproval.LeaveApprovalDomainException;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
-import staffs.staffleave.ui.leaveApproval.UpdateLeaveStatusCommand;
 
 @RestController
 @RequestMapping("/leaveRequests")

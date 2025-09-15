@@ -5,10 +5,18 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.event.TransactionPhase;
+import org.springframework.transaction.event.TransactionalEventListener;
 import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
+import staffs.staffleave.application.LeaveRejectedOrCancelledDomainEventMapper;
+import staffs.staffleave.application.LocalDomainEventManager;
+import staffs.staffleave.application.leaveRequest.LeaveRequestMapper;
+import staffs.staffleave.domain.events.LeaveCancelledEvent;
 import staffs.staffleave.domain.leaveBalance.LeaveBalance;
 import staffs.staffleave.domain.leaveBalance.LeaveBalanceDomainException;
+import staffs.staffleave.domain.leaveRequest.LeaveRequest;
 import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceRepository;
 import staffs.staffleave.ui.LeaveBalance.AddNewLeaveBalanceCommand;
 
@@ -18,6 +26,8 @@ public class LeaveBalanceApplicationService {
 
     private final LeaveBalanceRepository leaveBalanceRepository;
     private final Logger LOG = LoggerFactory.getLogger(getClass());
+    private final LeaveRejectedOrCancelledDomainEventMapper leaveRejectedOrCancelledDomainEventMapper;
+    private final LocalDomainEventManager localDomainEventManager;
 
     @Transactional
     public void createLeaveBalance(AddNewLeaveBalanceCommand command)
@@ -41,5 +51,30 @@ public class LeaveBalanceApplicationService {
             LOG.error("Error creating leave balance: {}", e.getMessage());
             throw new LeaveBalanceDomainException(e.getMessage());
         }
+    }
+
+    //Execute AFTER transaction that called this is committed
+    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)          //default phase
+    @org.springframework.transaction.annotation.Transactional(propagation = Propagation.REQUIRES_NEW)                      //creates new transaction
+    public void handle(LeaveCancelledEvent event){                          //Listen for OrderStartedDomainEvent
+        LeaveBalance leaveBalance = leaveRejectedOrCancelledDomainEventMapper.getLeaveBalanceFromCancelledEvent(event);
+
+//        LeaveBalance balance = LeaveRequestMapper.toDomain(existingJpa);
+
+        leaveBalance.updateBalance(
+                leaveBalance.balance() + event.getLeaveAmount()
+        );
+
+        leaveBalanceRepository.save(LeaveBalanceMapper.toJpa(leaveBalance));
+
+        LOG.info("Leave balance updated with ID: {}", leaveBalance.id());
+
+        //Check if payment method is  currently assigned to buyer
+        //if not then new payment details will be added and event generated
+//        buyer.addVerifyPaymentDetailsWithEvent(paymentMethod, event.getAggregateID());
+        //Save after converting
+        leaveBalanceRepository.save(LeaveBalanceMapper.toJpa(leaveBalance));
+        //notify any subscribers + save to event store
+        localDomainEventManager.manageDomainEvents(this, leaveBalance.listOfDomainEvents());
     }
 }

@@ -9,17 +9,9 @@ import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
 import staffs.staffleave.domain.leaveApproval.LeaveApproval;
 import staffs.staffleave.domain.leaveApproval.LeaveApprovalDomainException;
-import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
-import staffs.staffleave.infrastructure.eventStore.LocalDomainEventManager;
-import staffs.staffleave.infrastructure.leaveApproval.LeaveApprovalJpa;
+import staffs.staffleave.application.LocalDomainEventManager;
 import staffs.staffleave.infrastructure.leaveApproval.LeaveApprovalRepository;
-import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
 import staffs.staffleave.ui.leaveApproval.AddNewLeaveApprovalCommand;
-import staffs.staffleave.ui.leaveApproval.UpdateLeaveStatusCommand;
-
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.Optional;
 
 
 @Service

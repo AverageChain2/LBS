@@ -1,4 +1,4 @@
-package staffs.staffleave.infrastructure.eventStore;
+package staffs.staffleave.application;
 
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;

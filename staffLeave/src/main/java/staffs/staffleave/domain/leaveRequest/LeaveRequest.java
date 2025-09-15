@@ -4,9 +4,9 @@ import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
 import staffs.staffleave.domain.leaveApproval.LeaveStatus;
-import staffs.staffleave.domain.leaveApproval.events.LeaveApprovedEvent;
-import staffs.staffleave.domain.leaveApproval.events.LeaveCancelledEvent;
-import staffs.staffleave.domain.leaveApproval.events.LeaveRejectedEvent;
+import staffs.staffleave.domain.events.LeaveApprovedEvent;
+import staffs.staffleave.domain.events.LeaveCancelledEvent;
+import staffs.staffleave.domain.events.LeaveRejectedEvent;
 import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.util.Date;
@@ -34,11 +34,12 @@ public class LeaveRequest extends Entity {
     public void updateStatus(LeaveStatus newStatus, String newReason) {
         if (this.status != newStatus) {
             switch (newStatus) {
-                case Approved -> addDomainEvent(new LeaveApprovedEvent(id, newReason));
-                case Rejected -> addDomainEvent(new LeaveRejectedEvent(id, newReason));
-                case Cancelled -> addDomainEvent(new LeaveCancelledEvent(id));
+                case Approved -> addDomainEvent(new LeaveApprovedEvent(id, staffID, newReason));
+                case Rejected -> addDomainEvent(new LeaveRejectedEvent(id, staffID, newReason));
+                case Cancelled -> addDomainEvent(new LeaveCancelledEvent(id, staffID, leaveAmount, newReason));
             }
         }
+
 
         // Update fields
         this.status = newStatus;

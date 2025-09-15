@@ -19,7 +19,7 @@ public class LeaveRequestMapper {
                     leaveRequest.getStartDate(),
                     leaveRequest.getEndDate(),
                     leaveRequest.getLeaveAmount(),
-                    leaveRequest.getStatus().toString(),
+                    leaveRequest.getStatus(),
                     leaveRequest.getReason()
             );
         }

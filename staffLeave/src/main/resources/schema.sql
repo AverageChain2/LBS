@@ -31,7 +31,7 @@ CREATE TABLE leave_approval (
 CREATE TABLE leave_balance (
                                id VARCHAR(255) PRIMARY KEY NOT NULL,
                                staff_id VARCHAR(255) NOT NULL,
-                               leaveYear VARCHAR(255) NOT NULL,
+                               leave_year VARCHAR(255) NOT NULL,
                                balance FLOAT NOT NULL,
                                FOREIGN KEY (staff_id) REFERENCES users(id)
 );

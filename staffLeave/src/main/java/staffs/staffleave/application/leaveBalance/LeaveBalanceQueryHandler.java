@@ -7,6 +7,7 @@ import staffs.staffleave.application.leaveBalance.LeaveBalanceMapper;
 import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceJpa;
 import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @AllArgsConstructor
@@ -23,6 +24,15 @@ public class LeaveBalanceQueryHandler {
     public Optional<LeaveBalanceDTO> findLeaveBalanceById(String leaveBalance_id) {
         return leaveBalanceRepository.findById(leaveBalance_id)
                 .map(LeaveBalanceMapper::toLeaveBalanceDTO);
+    }
+
+
+    public Iterable<LeaveBalanceJpa> findLeaveBalancesByStaffId(String staff_id) {
+        return  leaveBalanceRepository.findBalancesByStaffId(staff_id);
+    }
+
+    public Optional<LeaveBalanceJpa> findLeaveBalancesByStaffIdAndYear(String staff_id, String leaveYear) {
+        return leaveBalanceRepository.findBalanceByStaffIdAndYear(staff_id, leaveYear);
     }
 
 }

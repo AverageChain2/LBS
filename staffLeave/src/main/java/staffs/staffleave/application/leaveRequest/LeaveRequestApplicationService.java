@@ -11,13 +11,13 @@ import staffs.common.domain.UniqueIDFactory;
 import staffs.staffleave.domain.leaveApproval.LeaveStatus;
 import staffs.staffleave.domain.leaveRequest.LeaveRequest;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
-import staffs.staffleave.infrastructure.eventStore.LocalDomainEventManager;
+import staffs.staffleave.application.LocalDomainEventManager;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestRepository;
 import staffs.staffleave.infrastructure.user.UserJpa;
 import staffs.staffleave.infrastructure.user.UserRepository;
 import staffs.staffleave.ui.LeaveRequest.AddNewLeaveRequestCommand;
-import staffs.staffleave.ui.leaveApproval.UpdateLeaveStatusCommand;
+import staffs.staffleave.ui.LeaveRequest.UpdateLeaveStatusCommand;
 
 @Service
 @RequiredArgsConstructor
@@ -71,11 +71,12 @@ public class LeaveRequestApplicationService {
 
             LeaveRequest approval = LeaveRequestMapper.toDomain(existingJpa);
 
+            LOG.info("Leave approval updating with status: {}", command.getStatus());
             approval.updateStatus(
                     command.getStatus(),
                     command.getReason()
             );
-
+            LOG.info("Leave approval updating with: {}", LeaveRequestMapper.toJpa(approval));
             leaveRequestRepository.save(LeaveRequestMapper.toJpa(approval));
 
             LOG.info("Leave approval updated with ID: {}", command.getLeaveRequestID());

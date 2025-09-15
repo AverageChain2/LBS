@@ -33,9 +33,8 @@ public class LeaveRequestJpa {
     @Column(name = "leave_amount")
     private Float leaveAmount;
 
-
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
+    @Column(name = "status")
     private LeaveStatus status;
 
     @Column(name = "reason")
@@ -52,6 +51,8 @@ public class LeaveRequestJpa {
         this.startDate = startDate;
         this.endDate = endDate;
         this.leaveAmount = leaveAmount;
+        this.status = status;
+        this.reason = reason;
     }
 
     // Factory method
