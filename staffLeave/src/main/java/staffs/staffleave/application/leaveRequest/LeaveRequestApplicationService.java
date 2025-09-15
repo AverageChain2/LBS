@@ -24,7 +24,7 @@ import staffs.staffleave.ui.LeaveRequest.UpdateLeaveStatusCommand;
 public class LeaveRequestApplicationService {
 
     private final LeaveRequestRepository leaveRequestRepository;
-    private final UserRepository userRepository; // Add this
+    private final UserRepository userRepository;
 
     private final LocalDomainEventManager localDomainEventManager;
 
@@ -36,7 +36,6 @@ public class LeaveRequestApplicationService {
             throws LeaveRequestDomainException {
 
         try {
-
             UserJpa staff = userRepository.findById(command.getStaffId())
                     .orElseThrow(() -> new LeaveRequestDomainException("User not found"));
 
@@ -56,11 +55,15 @@ public class LeaveRequestApplicationService {
             leaveRequestRepository.save(LeaveRequestMapper.toJpa(newRequest));
             LOG.info("Leave request created with ID: {}", idOfNewLeaveRequest);
 
+            // Send event
+            localDomainEventManager.manageDomainEvents(this, newRequest.listOfDomainEvents());
+
         } catch (IllegalArgumentException e) {
             LOG.error("Error creating leave request: {}", e.getMessage());
             throw new LeaveRequestDomainException(e.getMessage());
         }
     }
+
 
     @Transactional
     public void updateStatus(UpdateLeaveStatusCommand command) throws LeaveRequestDomainException {

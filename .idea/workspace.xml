@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Local event for changing status and updating balance works">
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Removed Leave Approval">
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveStatusChangeDomainEventMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/events/LeaveStatusChangeEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveBalance/LeaveBalanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveBalance/LeaveBalanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/LeaveRejectedOrCancelledDomainEventMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/LeaveRejectedOrCancelledDomainEventMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/events/LeaveApprovedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/events/LeaveApprovedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/events/LeaveRejectedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/events/LeaveRejectedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,60 +67,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "HTTP Request.generated-requests | #11.executor": "Run",
-    "HTTP Request.generated-requests | #12.executor": "Run",
-    "HTTP Request.generated-requests | #13.executor": "Run",
-    "HTTP Request.generated-requests | #14.executor": "Run",
-    "HTTP Request.generated-requests | #15.executor": "Run",
-    "HTTP Request.generated-requests | #16.executor": "Run",
-    "HTTP Request.generated-requests | #17.executor": "Run",
-    "HTTP Request.generated-requests | #18.executor": "Run",
-    "HTTP Request.generated-requests | #19.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #20.executor": "Run",
-    "HTTP Request.generated-requests | #23.executor": "Run",
-    "HTTP Request.generated-requests | #24.executor": "Run",
-    "HTTP Request.generated-requests | #25.executor": "Run",
-    "HTTP Request.generated-requests | #26.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "HTTP Request.generated-requests | #4.executor": "Run",
-    "HTTP Request.generated-requests | #5.executor": "Run",
-    "HTTP Request.generated-requests | #6.executor": "Run",
-    "HTTP Request.generated-requests | #7.executor": "Run",
-    "HTTP Request.generated-requests | #8.executor": "Run",
-    "HTTP Request.generated-requests | #9.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.LbsApplication.executor": "Run",
-    "Spring Boot.LeaveManagementApplication.executor": "Run",
-    "Spring Boot.StaffLeaveApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS/staffLeave/src/main/java/staffs/staffleave/ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #11.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #12.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #13.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #14.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #15.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #16.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #17.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #18.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #19.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #20.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #23.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #24.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #25.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #26.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #7.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #8.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #9.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.LbsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LeaveManagementApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StaffLeaveApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/614876640/IdeaProjects/LBS/staffLeave/src/main/java/staffs/staffleave/ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave\ui" />
@@ -132,11 +138,11 @@
       <recent name="staffs.leavemanagement.ui" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="staffs.staffleave.application.leaveBalance" />
+      <recent name="staffs.staffleave.domain.events" />
       <recent name="staffs.staffleave.application" />
       <recent name="staffs.leavemanagement.domain.leaveApproval" />
       <recent name="staffs.staffleave.domain.leaveBalance" />
-      <recent name="staffs.staffleave.domain.leaveRequest" />
-      <recent name="staffs.leavemanagement.domain.leaveBalance" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -156,13 +162,13 @@
     <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#2" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #23" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#23" index="23" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #25" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#25" index="25" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="generated-requests | #26" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#26" index="26" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#7" index="7" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #8" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#8" index="8" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -183,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #7" />
+        <item itemvalue="HTTP Request.generated-requests | #8" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="HTTP Request.generated-requests | #26" />
-        <item itemvalue="HTTP Request.generated-requests | #23" />
-        <item itemvalue="HTTP Request.generated-requests | #25" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +218,8 @@
       <workItem from="1753806029641" duration="47386000" />
       <workItem from="1757508258617" duration="15042000" />
       <workItem from="1757776635174" duration="10700000" />
-      <workItem from="1757882479911" duration="22276000" />
+      <workItem from="1757882479911" duration="23152000" />
+      <workItem from="1757962632054" duration="4819000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -302,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757943135095</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Removed Leave Approval">
+      <option name="closed" value="true" />
+      <created>1757945942711</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1757945942711</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +346,8 @@
     <MESSAGE value="Working database started adding local events" />
     <MESSAGE value="Moved approval into request" />
     <MESSAGE value="Local event for changing status and updating balance works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Local event for changing status and updating balance works" />
+    <MESSAGE value="Removed Leave Approval" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Leave Approval" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

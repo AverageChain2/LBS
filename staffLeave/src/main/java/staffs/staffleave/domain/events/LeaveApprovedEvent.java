@@ -13,12 +13,15 @@ import java.time.LocalDate;
 public class LeaveApprovedEvent implements LocalEvent {
     private final Identity aggregateID;
     private final UserJpa staffID;
-    private final String occurredOn;
+    private final Float leaveAmount;
     private final String reason;
+    private final String occurredOn;
 
-    public LeaveApprovedEvent(Identity aggregateID, UserJpa staffID, String reason) {
+
+    public LeaveApprovedEvent(Identity aggregateID, UserJpa staffID, Float leaveAmount, String reason) {
         this.aggregateID = aggregateID;
         this.staffID = staffID;
+        this.leaveAmount = leaveAmount;
         this.reason = reason;
         this.occurredOn = LocalDate.now().toString();
     }

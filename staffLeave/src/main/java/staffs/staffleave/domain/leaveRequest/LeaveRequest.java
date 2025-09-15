@@ -6,6 +6,7 @@ import staffs.common.domain.Identity;
 import staffs.staffleave.domain.events.LeaveApprovedEvent;
 import staffs.staffleave.domain.events.LeaveCancelledEvent;
 import staffs.staffleave.domain.events.LeaveRejectedEvent;
+import staffs.staffleave.domain.events.LeaveStatusChangeEvent;
 import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.util.Date;
@@ -28,21 +29,24 @@ public class LeaveRequest extends Entity {
         this.leaveAmount = leaveAmount;
         this.status = status;
         this.reason = reason;
+
+        // Remove leaveAmount due to pending request to prevent over spending leave
+        addDomainEvent(new LeaveStatusChangeEvent(id, staffID, leaveAmount, status, ""));
+
     }
 
     public void updateStatus(LeaveStatus newStatus, String newReason) {
         if (this.status != newStatus) {
-            switch (newStatus) {
-                case Approved -> addDomainEvent(new LeaveApprovedEvent(id, staffID, newReason));
-                case Rejected -> addDomainEvent(new LeaveRejectedEvent(id, staffID, newReason));
-                case Cancelled -> addDomainEvent(new LeaveCancelledEvent(id, staffID, leaveAmount, newReason));
+            if (this.status != LeaveStatus.Pending && this.status != LeaveStatus.Approved) {
+                addDomainEvent(new LeaveStatusChangeEvent(id, staffID, leaveAmount, newStatus, newReason));
             }
+            // Update fields
+            this.status = newStatus;
+            this.reason = newReason;
         }
 
 
-        // Update fields
-        this.status = newStatus;
-        this.reason = newReason;
+
 
     }
 
