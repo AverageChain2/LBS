@@ -1,19 +1,17 @@
 package staffs.common.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
-@NoArgsConstructor //required for command JSON mapping
 @Getter
-@Setter
 @ToString
 public class FullName extends ValueObject {
     private String surname;
     private String firstName;
 
-    public FullName(String firstName, String surname){
+    public FullName(@JsonProperty("firstName") String firstName,
+                    @JsonProperty("surname") String surname){
         setFirstName(firstName);
         setSurname(surname);
     }

@@ -1,8 +1,11 @@
 package staffs.common.domain;
 
+import lombok.Getter;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Getter //needed for JSON serialisation in events (unless convert to DTO)
 public class Money extends ValueObject {
     private BigDecimal amount;
 

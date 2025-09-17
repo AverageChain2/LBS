@@ -3,28 +3,26 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for common" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="common" />
       </profile>
-      <profile name="Annotation profile for staffLeave" enabled="true">
+      <profile name="Annotation profile for identityManagement" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="identityManagement" />
+        <module name="common" />
         <module name="LBS" />
         <module name="staffLeave" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo" target="17" />
       <module name="leaveManagement" target="24" />
       <module name="using" target="24" />
     </bytecodeTargetLevel>
@@ -33,6 +31,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="LBS" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="identityManagement" options="-parameters" />
       <module name="leaveManagement" options="-parameters" />
       <module name="staffLeave" options="-parameters" />
       <module name="using" options="-parameters" />

@@ -9,10 +9,13 @@
         <option value="$PROJECT_DIR$/staffLeave/pom.xml" />
         <option value="$PROJECT_DIR$/leaveManagement/pom.xml" />
         <option value="$PROJECT_DIR$/using/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/identityManagement/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/leaveManagement/pom.xml" />
         <option value="$PROJECT_DIR$/using/pom.xml" />
       </set>

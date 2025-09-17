@@ -1,4 +1,4 @@
 package staffs.common.events;
 
-public interface LocalEvent extends Event{
+public interface LocalEvent extends Event {
 }
