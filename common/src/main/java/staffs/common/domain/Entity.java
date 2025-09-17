@@ -1,31 +1,32 @@
 package staffs.common.domain;
-
-
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import staffs.common.events.Event;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Entity extends AssertionConcern {
-   protected final Identity id;
-    private final List<Event> domainEvents = new ArrayList<>();
-
+    protected final Identity id;
+    @JsonIgnore //If not included then when we convert to JSON without DTO for remote events it will cause recursive loop
+    public List<Event> listOfEvents = new ArrayList<>();
 
     protected Entity(Identity id) {
         this.id = id;
     }
 
+    protected void addDomainEvent(Event event){
+        listOfEvents.add(event);
+    }
+    protected void removeDomainEvent(Event event){
+        listOfEvents.remove(event);
+    }
+
+    public List<Event> listOfDomainEvents(){
+        return listOfEvents;
+    }
+
     public Identity id() {
         return id;
-    }
-
-    protected void addDomainEvent(Event event) {
-        domainEvents.add(event);
-    }
-
-    public List<Event> listOfDomainEvents() {
-        return domainEvents;
     }
 
     public boolean equals(Object o){
@@ -37,5 +38,3 @@ public abstract class Entity extends AssertionConcern {
         return another.id == this.id;
     }
 }
-
-
