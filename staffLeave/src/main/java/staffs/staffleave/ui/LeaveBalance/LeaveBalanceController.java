@@ -3,6 +3,7 @@ package staffs.staffleave.ui.LeaveBalance;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import staffs.staffleave.application.leaveBalance.DTO.LeaveBalanceDTO;
@@ -25,6 +26,7 @@ public class LeaveBalanceController {
      * GET /leave-balances
      */
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Iterable<?> getAllLeaveBalances() {
         return queryHandler.findAllLeaveBalances();
     }

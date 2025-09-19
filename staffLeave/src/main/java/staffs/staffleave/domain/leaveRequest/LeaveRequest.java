@@ -3,25 +3,23 @@ package staffs.staffleave.domain.leaveRequest;
 import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
-import staffs.staffleave.domain.events.LeaveApprovedEvent;
-import staffs.staffleave.domain.events.LeaveCancelledEvent;
-import staffs.staffleave.domain.events.LeaveRejectedEvent;
+import staffs.common.security.AppUserJpa;
+
 import staffs.staffleave.domain.events.LeaveStatusChangeEvent;
-import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.util.Date;
 
 @ToString
 public class LeaveRequest extends Entity {
 
-    private UserJpa staffID;
+    private AppUserJpa staffID;
     private final Date startDate;
     private final Date endDate;
     private final Float leaveAmount;
     private LeaveStatus status;
     private String reason;
 
-    public LeaveRequest(Identity id, UserJpa staffID, Date startDate, Date endDate, Float leaveAmount, LeaveStatus status, String reason) {
+    public LeaveRequest(Identity id, AppUserJpa staffID, Date startDate, Date endDate, Float leaveAmount, LeaveStatus status, String reason) {
         super(id);
         setStaffId(staffID);
         this.startDate = startDate;
@@ -51,11 +49,11 @@ public class LeaveRequest extends Entity {
     }
 
     // Factory method for testing
-    public static LeaveRequest leaveRequestOf(Identity id, UserJpa staffID, Date startDate, Date endDate, Float leaveAmount, LeaveStatus status, String reason) {
+    public static LeaveRequest leaveRequestOf(Identity id, AppUserJpa staffID, Date startDate, Date endDate, Float leaveAmount, LeaveStatus status, String reason) {
         return new LeaveRequest(id, staffID, startDate, endDate, leaveAmount, status, reason);
     }
 
-    private void setStaffId(UserJpa staffID) {
+    private void setStaffId(AppUserJpa staffID) {
         assertArgumentNotEmpty(staffID, "Staff ID cannot be empty");
         this.staffID = staffID;
     }
@@ -65,7 +63,7 @@ public class LeaveRequest extends Entity {
         return id;
     }
 
-    public UserJpa staffID() {
+    public AppUserJpa staffID() {
         return staffID;
     }
 

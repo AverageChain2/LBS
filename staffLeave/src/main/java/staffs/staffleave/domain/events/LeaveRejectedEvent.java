@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.ToString;
 import staffs.common.domain.Identity;
 import staffs.common.events.LocalEvent;
-import staffs.staffleave.infrastructure.user.UserJpa;
+import staffs.common.security.AppUserJpa;
 
 import java.time.LocalDate;
 
@@ -12,13 +12,13 @@ import java.time.LocalDate;
 @ToString
 public class LeaveRejectedEvent implements LocalEvent {
     private final Identity aggregateID;
-    private final UserJpa staffID;
+    private final AppUserJpa staffID;
     private final Float leaveAmount;
     private final String reason;
     private final String occurredOn;
 
 
-    public LeaveRejectedEvent(Identity aggregateID,  UserJpa staffID, Float leaveAmount, String reason) {
+    public LeaveRejectedEvent(Identity aggregateID,  AppUserJpa staffID, Float leaveAmount, String reason) {
         this.aggregateID = aggregateID;
         this.staffID = staffID;
         this.leaveAmount = leaveAmount;

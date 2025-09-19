@@ -4,43 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Added event for creation of request to take from balance">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/dto/AddressDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/dto/OrderItemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/OrderCancelledEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/OrderConfirmedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/OrderStartedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/RemoteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/JWTAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/JwtTokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/RateLimiterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/ui/CommonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/resources/config/shared_secrets.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/IdentityManagementApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/security/SecurityProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/IdentityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/UserDetailsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/config/secrets.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" afterDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Working admin user identity">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUserJpa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/TeamJpa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/DTO/AppUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/TeamRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/AddNewAppUserCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/FullName.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/FullName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Identity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Identity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/LocalEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/LocalEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/common/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/RoleJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/AppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/IdentityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/IdentityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/UserDetailsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/AppUserDetailsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staffLeave/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/StaffLeaveApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/StaffLeaveApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/DTO/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserApplicationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserQueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/user/UserJpa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/infrastructure/user/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveBalance/LeaveBalanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveBalance/LeaveBalanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/LeaveRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/LeaveRequest/LeaveRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/AddNewUserCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,69 +101,70 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "HTTP Request.generated-requests | #11.executor": "Run",
-    "HTTP Request.generated-requests | #12.executor": "Run",
-    "HTTP Request.generated-requests | #13.executor": "Run",
-    "HTTP Request.generated-requests | #14.executor": "Run",
-    "HTTP Request.generated-requests | #15.executor": "Run",
-    "HTTP Request.generated-requests | #16.executor": "Run",
-    "HTTP Request.generated-requests | #17.executor": "Run",
-    "HTTP Request.generated-requests | #18.executor": "Run",
-    "HTTP Request.generated-requests | #19.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #20.executor": "Run",
-    "HTTP Request.generated-requests | #23.executor": "Run",
-    "HTTP Request.generated-requests | #24.executor": "Run",
-    "HTTP Request.generated-requests | #25.executor": "Run",
-    "HTTP Request.generated-requests | #26.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "HTTP Request.generated-requests | #4.executor": "Run",
-    "HTTP Request.generated-requests | #5.executor": "Run",
-    "HTTP Request.generated-requests | #6.executor": "Run",
-    "HTTP Request.generated-requests | #7.executor": "Run",
-    "HTTP Request.generated-requests | #8.executor": "Run",
-    "HTTP Request.generated-requests | #9.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.IdentityManagementApplication.executor": "Run",
-    "Spring Boot.LbsApplication.executor": "Run",
-    "Spring Boot.LeaveManagementApplication.executor": "Run",
-    "Spring Boot.StaffLeaveApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS/common/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #10.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #11.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #12.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #13.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #14.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #15.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #16.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #17.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #18.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #19.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #20.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #23.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #24.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #25.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #26.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #7.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #8.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #9.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.IdentityManagementApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LbsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LeaveManagementApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StaffLeaveApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/614876640/IdeaProjects/LBS/identityManagement/src/main/java/staffs/identitymanagement/domain&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\614876640\IdeaProjects\LBS\common\src\main\resources" />
-      <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave" />
-      <recent name="C:\Users\614876640\IdeaProjects\LBS\common\src\main\java\staffs\common" />
-      <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement" />
-      <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement\src\main\resources" />
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement\src\main\java\staffs\identitymanagement\domain" />
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement\src\main\java\staffs\identitymanagement\ui" />
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement\src\main\java\staffs\identitymanagement\infrastructure" />
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement\src\main\java\staffs\identitymanagement\application" />
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\resources" />
@@ -168,11 +175,11 @@
       <recent name="staffs.leavemanagement.ui" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="staffs.identitymanagement.infrastructure" />
+      <recent name="staffs.common.security" />
       <recent name="staffs.staffleave.application.leaveBalance" />
       <recent name="staffs.staffleave.domain.events" />
       <recent name="staffs.staffleave.application" />
-      <recent name="staffs.leavemanagement.domain.leaveApproval" />
-      <recent name="staffs.staffleave.domain.leaveBalance" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -185,8 +192,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.IdentityManagementApplication">
-    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#1" runType="Run single request">
+  <component name="RunManager" selected="Compound.All Services">
+    <configuration name="All Services" type="CompoundRunConfigurationType">
+      <toRun name="IdentityManagementApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="StaffLeaveApplication" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #10" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#10" index="10" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#2" index="2" runType="Run single request">
@@ -209,14 +221,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="demo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="IdentityManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="identityManagement" />
@@ -233,13 +237,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Compound.All Services" />
+      <item itemvalue="HTTP Request.generated-requests | #10" />
+      <item itemvalue="HTTP Request.generated-requests | #2" />
+      <item itemvalue="HTTP Request.generated-requests | #7" />
+      <item itemvalue="HTTP Request.generated-requests | #8" />
+      <item itemvalue="HTTP Request.generated-requests | #9" />
+      <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="Spring Boot.IdentityManagementApplication" />
+      <item itemvalue="Spring Boot.StaffLeaveApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #10" />
         <item itemvalue="HTTP Request.generated-requests | #9" />
         <item itemvalue="HTTP Request.generated-requests | #7" />
         <item itemvalue="HTTP Request.generated-requests | #8" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
-        <item itemvalue="HTTP Request.generated-requests | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +281,9 @@
       <workItem from="1757776635174" duration="10700000" />
       <workItem from="1757882479911" duration="23152000" />
       <workItem from="1757962632054" duration="5019000" />
-      <workItem from="1758100633558" duration="8418000" />
+      <workItem from="1758100633558" duration="18215000" />
+      <workItem from="1758273810134" duration="10708000" />
+      <workItem from="1758293029377" duration="1313000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -372,7 +389,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757967671593</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Identity Management">
+      <option name="closed" value="true" />
+      <created>1758114655557</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1758114655558</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Identity Management">
+      <option name="closed" value="true" />
+      <created>1758114740721</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1758114740721</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +436,9 @@
     <MESSAGE value="Local event for changing status and updating balance works" />
     <MESSAGE value="Removed Leave Approval" />
     <MESSAGE value="Added event for creation of request to take from balance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added event for creation of request to take from balance" />
+    <MESSAGE value="Identity Management" />
+    <MESSAGE value="Working admin user identity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working admin user identity" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

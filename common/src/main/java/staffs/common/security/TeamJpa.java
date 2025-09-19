@@ -6,23 +6,23 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity(name = "Role")
-@Table(name = "role")
+@Entity(name = "Team")
+@Table(name = "team")
 @Getter
 @Setter
-public class Role {
+public class TeamJpa {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
     @NotNull
-    @Column(name = "type")
+    @Column(name = "name")
     @JsonValue //need to explicitly include this for JSON serialisation
-    private String type;
+    private String name;
 
     public String toString(){
-        return type;
+        return name;
     }
 }
 

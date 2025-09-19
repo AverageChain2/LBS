@@ -8,14 +8,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
+import staffs.common.security.AppUserJpa;
+import staffs.identitymanagement.infrastructure.AppUserRepository;
 import staffs.staffleave.domain.leaveRequest.LeaveStatus;
 import staffs.staffleave.domain.leaveRequest.LeaveRequest;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
 import staffs.staffleave.application.LocalDomainEventManager;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestJpa;
 import staffs.staffleave.infrastructure.leaveRequest.LeaveRequestRepository;
-import staffs.staffleave.infrastructure.user.UserJpa;
-import staffs.staffleave.infrastructure.user.UserRepository;
 import staffs.staffleave.ui.LeaveRequest.AddNewLeaveRequestCommand;
 import staffs.staffleave.ui.LeaveRequest.UpdateLeaveStatusCommand;
 
@@ -24,7 +24,7 @@ import staffs.staffleave.ui.LeaveRequest.UpdateLeaveStatusCommand;
 public class LeaveRequestApplicationService {
 
     private final LeaveRequestRepository leaveRequestRepository;
-    private final UserRepository userRepository;
+    private final AppUserRepository userRepository;
 
     private final LocalDomainEventManager localDomainEventManager;
 
@@ -36,7 +36,7 @@ public class LeaveRequestApplicationService {
             throws LeaveRequestDomainException {
 
         try {
-            UserJpa staff = userRepository.findById(command.getStaffId())
+            AppUserJpa staff = userRepository.findById(command.getStaffId())
                     .orElseThrow(() -> new LeaveRequestDomainException("User not found"));
 
             Identity idOfNewLeaveRequest = UniqueIDFactory.createID();

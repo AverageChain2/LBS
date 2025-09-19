@@ -40,15 +40,16 @@ public class JwtTokenUtil {
     }
 
     //generate token for user
-    public String generateToken(AppUser userDetails) {
+    public String generateToken(AppUserJpa userDetails) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put(AppUser.USERNAME, userDetails.getUserName());
+        claims.put(AppUserJpa.USERNAME, userDetails.getUserName());
         //Do not include the password
-        claims.put(AppUser.ID, userDetails.getUserUUID());
-        claims.put(AppUser.FIRST_NAME, userDetails.getFirstName());
-        claims.put(AppUser.SURNAME, userDetails.getSurname());
-        claims.put(AppUser.EMAIL, userDetails.getEmail());
-        claims.put(AppUser.ROLE, userDetails.getRole().toString()); //As this is an object (in AppUser need to toString otherwise null)
+        claims.put(AppUserJpa.ID, userDetails.getUserUUID());
+        claims.put(AppUserJpa.FIRST_NAME, userDetails.getFirstName());
+        claims.put(AppUserJpa.SURNAME, userDetails.getSurname());
+        claims.put(AppUserJpa.EMAIL, userDetails.getEmail());
+        claims.put(AppUserJpa.ROLE, userDetails.getRole().toString()); //As this is an object (in AppUser need to toString otherwise null)
+        claims.put(AppUserJpa.TEAM, userDetails.getTeam().toString()); //As this is an object (in AppUser need to toString otherwise null)
         return tokenFactory(claims, userDetails.getUserName());
     }
 
@@ -88,7 +89,12 @@ public class JwtTokenUtil {
 
     public String extractRole(String token) {
         Claims claims = getAllClaimsFromToken(token);
-        return claims.get(AppUser.ROLE).toString();
+        return claims.get(AppUserJpa.ROLE).toString();
+    }
+
+    public String extractTeam(String token) {
+        Claims claims = getAllClaimsFromToken(token);
+        return claims.get(AppUserJpa.TEAM).toString();
     }
 
     public boolean isTokenValid(String token) {

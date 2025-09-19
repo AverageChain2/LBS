@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import staffs.common.security.AppUserJpa;
 import staffs.staffleave.domain.leaveRequest.LeaveStatus;
-import staffs.staffleave.infrastructure.user.UserJpa;
 
 import java.util.Date;
 
@@ -22,7 +22,7 @@ public class LeaveRequestJpa {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "staff_id")
-    private UserJpa staffID;
+    private AppUserJpa staffID;
 
     @Column(name = "start_date")
     private Date startDate;
@@ -45,7 +45,7 @@ public class LeaveRequestJpa {
     }
 
     // Custom constructor
-    protected LeaveRequestJpa(String id, UserJpa staffID, Date startDate, Date endDate, Float leaveAmount, LeaveStatus status, String reason) {
+    protected LeaveRequestJpa(String id, AppUserJpa staffID, Date startDate, Date endDate, Float leaveAmount, LeaveStatus status, String reason) {
         this.id = id;
         this.staffID = staffID;
         this.startDate = startDate;
@@ -56,7 +56,7 @@ public class LeaveRequestJpa {
     }
 
     // Factory method
-    public static LeaveRequestJpa leaveRequestJpaOf(String id, UserJpa staffId, Date startDate, Date endDate, Float leaveAmount,  LeaveStatus status, String reason) {
+    public static LeaveRequestJpa leaveRequestJpaOf(String id, AppUserJpa staffId, Date startDate, Date endDate, Float leaveAmount,  LeaveStatus status, String reason) {
         return new LeaveRequestJpa(id, staffId, startDate, endDate, leaveAmount,  status, reason);
     }
 }
