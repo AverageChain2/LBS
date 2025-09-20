@@ -16,7 +16,7 @@ import staffs.staffleave.ui.LeaveRequest.AddNewLeaveRequestCommand;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/users2")
 @RequiredArgsConstructor
 public class UserController {
 
