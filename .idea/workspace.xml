@@ -5,42 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Added event for creation of request to take from balance">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/dto/AddressDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/dto/OrderItemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/OrderCancelledEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/OrderConfirmedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/OrderStartedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/RemoteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/JWTAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/JwtTokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/RateLimiterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/ui/CommonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/resources/config/shared_secrets.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/IdentityManagementApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/security/SecurityProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/IdentityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/UserDetailsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/config/secrets.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/FullName.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/FullName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Identity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Identity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/domain/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/LocalEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/events/LocalEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staffLeave/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,9 +100,9 @@
     "Spring Boot.LbsApplication.executor": "Run",
     "Spring Boot.LeaveManagementApplication.executor": "Run",
     "Spring Boot.StaffLeaveApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "identity",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS/common/src/main/resources",
+    "last_opened_file_path": "C:/Users/614876640/IdeaProjects/LBS/staffLeave/src/main/java/staffs/staffleave",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -153,11 +121,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\java\staffs\staffleave" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\common\src\main\resources" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\common\src\main\java\staffs\common" />
       <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement" />
-      <recent name="C:\Users\614876640\IdeaProjects\LBS\identityManagement\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\614876640\IdeaProjects\LBS\staffLeave\src\main\resources" />
@@ -185,7 +153,12 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.IdentityManagementApplication">
+  <component name="RunManager" selected="Compound.AllServices">
+    <configuration name="AllServices" type="CompoundRunConfigurationType">
+      <toRun name="IdentityManagementApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="StaffLeaveApplication" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
     <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -209,14 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="demo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="IdentityManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="identityManagement" />
@@ -233,6 +198,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Compound.AllServices" />
+      <item itemvalue="HTTP Request.generated-requests | #1" />
+      <item itemvalue="HTTP Request.generated-requests | #2" />
+      <item itemvalue="HTTP Request.generated-requests | #7" />
+      <item itemvalue="HTTP Request.generated-requests | #8" />
+      <item itemvalue="HTTP Request.generated-requests | #9" />
+      <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="Spring Boot.IdentityManagementApplication" />
+      <item itemvalue="Spring Boot.StaffLeaveApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.generated-requests | #9" />
@@ -267,6 +243,7 @@
       <workItem from="1757882479911" duration="23152000" />
       <workItem from="1757962632054" duration="5019000" />
       <workItem from="1758100633558" duration="8418000" />
+      <workItem from="1758379545325" duration="845000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
