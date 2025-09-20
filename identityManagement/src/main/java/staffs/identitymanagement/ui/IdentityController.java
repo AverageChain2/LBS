@@ -10,7 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import staffs.common.security.RateLimiterService;
 import staffs.common.ui.CommonController;
+import staffs.identitymanagement.application.AppUserApplicationService;
+import staffs.identitymanagement.application.AppUserQueryHandler;
 import staffs.identitymanagement.application.UserService;
+import staffs.identitymanagement.domain.user.AppUserDomainException;
 
 import java.util.Map;
 import java.util.Optional;
@@ -20,6 +23,8 @@ import java.util.Optional;
 @RestController
 public class IdentityController extends CommonController {
     private UserService userService;
+    private AppUserApplicationService appUserApplicationService;
+    private AppUserQueryHandler queryHandler;
     private final RateLimiterService rateLimiterService;
     private final HttpServletRequest request;
 
@@ -38,6 +43,25 @@ public class IdentityController extends CommonController {
         //number of attempts has been exceeded
         return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS)
                 .body(Map.of("error", "Too many attempts. Try again later."));//make parsing of responses easier
+    }
+
+    /**
+     * GET /users
+     * Returns all users
+     */
+    @GetMapping("/users")
+    public Iterable<?> getAllUsers() {
+        return queryHandler.findAllUsers();
+    }
+
+    /**
+     * POST /users
+     * Adds a new user
+     */
+    @PostMapping("/users/newUser")
+    public HttpStatus addUser(@RequestBody AddNewAppUserCommand command) throws AppUserDomainException {
+        appUserApplicationService.createAppUser(command);
+        return HttpStatus.CREATED;
     }
 
     //we could add a refresh token and then also add invalidate token following that

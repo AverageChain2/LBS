@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Added event for creation of request to take from balance">
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Added jwt to pom in staffleave">
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserQueryHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/DTO/AppUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/TeamRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/AddNewAppUserCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/IdentityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/IdentityController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +253,7 @@
       <workItem from="1757882479911" duration="23152000" />
       <workItem from="1757962632054" duration="5019000" />
       <workItem from="1758100633558" duration="8418000" />
-      <workItem from="1758379545325" duration="845000" />
+      <workItem from="1758379545325" duration="6316000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -349,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757967671593</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added jwt to pom in staffleave">
+      <option name="closed" value="true" />
+      <created>1758380702764</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1758380702764</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +398,8 @@
     <MESSAGE value="Local event for changing status and updating balance works" />
     <MESSAGE value="Removed Leave Approval" />
     <MESSAGE value="Added event for creation of request to take from balance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added event for creation of request to take from balance" />
+    <MESSAGE value="Added jwt to pom in staffleave" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added jwt to pom in staffleave" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

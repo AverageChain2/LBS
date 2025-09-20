@@ -2,13 +2,17 @@ package staffs.common.security;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "app_user")
 @Table(name = "app_user")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AppUser {
     //Needed for JWT generateToken method as well as with the columns below
     public final static String EMAIL = "email";
@@ -47,8 +51,18 @@ public class AppUser {
     @JoinColumn(name="role_id")
     private Role role;
 
-    public String toString(){
-        return String.format("%s, %s, %s, %s %s" , userUUID,
-                userName, password, email, role);
+//    public String toString(){
+//        return String.format("%s, %s, %s, %s %s" , userUUID,
+//                userName, password, email, role);
+//    }
+
+// @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "team_id")
+    // private Team team;
+
+    public static AppUser appUserJpaOf(String id, String userName, String password, String firstName,
+                                       String surname, String email, Role role /*, Team team */) {
+        return new AppUser(id, userName, password, email, firstName, surname, role /*, team */);
     }
+
 }
