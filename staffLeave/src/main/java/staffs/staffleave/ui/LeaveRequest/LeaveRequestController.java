@@ -2,10 +2,13 @@ package staffs.staffleave.ui.LeaveRequest;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import staffs.staffleave.application.leaveRequest.LeaveRequestApplicationService;
 import staffs.staffleave.application.leaveRequest.LeaveRequestQueryHandler;
 import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/leaveRequests")
@@ -17,16 +20,43 @@ public class LeaveRequestController {
     private final LeaveRequestApplicationService leaveRequestApplicationService;
 
     /**
-     * GET /leave-requests
+     * GET /leaveRequests
      */
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Iterable<?> getAllLeaveRequests() {
         return queryHandler.findAllLeaveRequests();
     }
 
     /**
+     * GET /leaveRequests/{Id}
+     */
+    @GetMapping("/id/{Id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public Optional<?> getLeaveRequestByID(@PathVariable String Id) {
+        return queryHandler.findLeaveRequestById(Id);
+    }
+
+    /**
+     * GET /leaveRequests/staff/{staffId}
+     */
+    @GetMapping("/staff/{staffId}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public Iterable<?> getLeaveRequestsByStaffID(@PathVariable String staffId) {
+        return queryHandler.findLeaveRequestsByStaffId(staffId);
+    }
+
+    /**
+     * GET /leaveRequests/{team}
+     */
+    @GetMapping("/team/{team}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public Iterable<?> getLeaveRequestsByTeam(@PathVariable String team) {
+        return queryHandler.findLeaveBalancesByTeam(team);
+    }
+
+    /**
      * POST /leave-requests
-     * Example JSON:
      * {
      *   "staffId": "86080e1c-8cb4-4777-9129-feaa485bbdfd",
      *   "startDate": "2025-08-10T09:00:00Z",
@@ -35,6 +65,7 @@ public class LeaveRequestController {
      * }
      */
     @PostMapping("/newLeaveRequest")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'MANAGER', 'STAFF')")
     public HttpStatus createLeaveRequest(@RequestBody AddNewLeaveRequestCommand command) throws LeaveRequestDomainException {
         applicationService.createLeaveRequest(command);
         return HttpStatus.CREATED;

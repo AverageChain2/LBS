@@ -23,7 +23,7 @@ values ('61440eb5-45ea-42b9-a799-c32c5627812c',
         'first2',
         'surname2',
         'admin@email.com',
-        2,
+        3,
         1);
 
 create sequence event_store_sequence_id start with (select max(id) + 1 from event_store);

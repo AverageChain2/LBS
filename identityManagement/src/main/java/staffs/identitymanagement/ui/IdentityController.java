@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import staffs.common.security.RateLimiterService;
 import staffs.common.ui.CommonController;
@@ -50,6 +51,7 @@ public class IdentityController extends CommonController {
      * Returns all users
      */
     @GetMapping("/appUsers")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Iterable<?> getAllUsers() {
         return queryHandler.findAllUsers();
     }
@@ -59,6 +61,7 @@ public class IdentityController extends CommonController {
      * Adds a new user
      */
     @PostMapping("/appUsers/newUser")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public HttpStatus addUser(@RequestBody AddNewAppUserCommand command) throws AppUserDomainException {
         appUserApplicationService.createAppUser(command);
         return HttpStatus.CREATED;
