@@ -11,6 +11,7 @@ import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
 import staffs.common.security.Role;
 import staffs.common.security.Team;
+import staffs.identitymanagement.application.events.DomainEventManager;
 import staffs.identitymanagement.domain.user.AppUserDomain;
 import staffs.identitymanagement.domain.user.AppUserDomainException;
 import staffs.identitymanagement.infrastructure.RoleRepository;
@@ -29,7 +30,8 @@ public class AppUserApplicationService {
     private final TeamRepository teamRepository;
     private final RoleRepository roleRepository;
 
-//    private final LeaveBalanceRepository leaveBalanceRepository;
+    private final DomainEventManager domainEventManager;
+
 
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 
@@ -47,7 +49,7 @@ public class AppUserApplicationService {
             Identity idOfNewUser = UniqueIDFactory.createID();
             LOG.info("New user id is {}", idOfNewUser);
 
-            AppUserDomain newAppUser = new AppUserDomain(
+            AppUserDomain newAppUser = AppUserDomain.AppUserOfWithEvent(
                     idOfNewUser,
                     command.getUsername(),
                     command.getPassword(),
@@ -60,6 +62,9 @@ public class AppUserApplicationService {
 
             appUserRepository.save(AppUserMapper.domainToJpa(newAppUser));
             LOG.info("User created with ID: {}", idOfNewUser);
+
+            //Notify any subscribers
+            domainEventManager.manageDomainEvents(this, newAppUser.listOfDomainEvents());
 
 //            Identity idOfNewLeaveBalance = UniqueIDFactory.createID();
 //            LeaveBalance balance = new LeaveBalance(

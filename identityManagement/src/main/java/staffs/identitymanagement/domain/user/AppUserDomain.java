@@ -5,6 +5,9 @@ import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
 import staffs.common.security.Role;
 import staffs.common.security.Team;
+import staffs.identitymanagement.domain.events.events.NewAppUserAddedEvent;
+
+import java.util.List;
 
 
 @ToString
@@ -39,6 +42,21 @@ public class AppUserDomain extends Entity {
         return new AppUserDomain(id, username, password, firstname, surname, email, roleJpa
                 , teamJpa
         );
+    }
+
+    //Used for event generation
+    public static AppUserDomain AppUserOfWithEvent(Identity id, String username, String password, String firstname,
+                                                   String surname, String email, Role roleJpa, Team teamJpa) {
+        AppUserDomain newAppUser = new AppUserDomain(id, username, password, firstname, surname, email, roleJpa
+                ,teamJpa);
+        //Only passing id and name as an event (at the moment)
+        newAppUser.addDomainEvent(new NewAppUserAddedEvent(newAppUser.id.id(),
+                id.id(),
+                firstname,
+                surname,
+                roleJpa.getType(),
+                teamJpa.getName()));
+        return newAppUser;
     }
 
     private void setUsername(String username) {

@@ -26,6 +26,10 @@ values ('61440eb5-45ea-42b9-a799-c32c5627812c',
         2,
         1);
 
+create sequence event_store_sequence_id start with (select max(id) + 1 from event_store);
+
+
 //Password = user123
 //Password = admin123
 //https://bcrypt-generator.com/
+
