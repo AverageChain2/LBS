@@ -49,7 +49,7 @@ public class IdentityController extends CommonController {
      * GET /users
      * Returns all users
      */
-    @GetMapping("/users")
+    @GetMapping("/appUsers")
     public Iterable<?> getAllUsers() {
         return queryHandler.findAllUsers();
     }
@@ -58,7 +58,7 @@ public class IdentityController extends CommonController {
      * POST /users
      * Adds a new user
      */
-    @PostMapping("/users/newUser")
+    @PostMapping("/appUsers/newUser")
     public HttpStatus addUser(@RequestBody AddNewAppUserCommand command) throws AppUserDomainException {
         appUserApplicationService.createAppUser(command);
         return HttpStatus.CREATED;

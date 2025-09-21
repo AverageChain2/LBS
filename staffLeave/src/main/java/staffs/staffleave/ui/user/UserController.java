@@ -16,7 +16,7 @@ import staffs.staffleave.ui.LeaveRequest.AddNewLeaveRequestCommand;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users2")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -32,27 +32,19 @@ public class UserController {
         return queryHandler.findAllUsers();
     }
 
-    /**
-     * POST /users
-     * Adds a new user
-     */
-//    @PostMapping("/newUser")
-//    public HttpStatus addUser(@RequestBody AddNewUserCommand command) throws UserDomainException {
-//        applicationService.addNewUser(command);
-//        return HttpStatus.CREATED;
-//    }
+
 
 
     /**
      * GET /users/{id}
      * Returns a user by ID
      */
-//    @GetMapping("/{id}")
-//    public ResponseEntity<UserDTO> getLeaveRequestById(@PathVariable String id) {
-//             return queryHandler.findUserById(id)
-//                 .map(ResponseEntity::ok)
-//                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with ID: " + id));
-//         }
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDTO> getLeaveRequestById(@PathVariable String id) {
+             return queryHandler.findUserById(id)
+                 .map(ResponseEntity::ok)
+                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with ID: " + id));
+         }
 
 //    /**
 //     * DELETE /users/{id}
