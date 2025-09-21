@@ -14,7 +14,7 @@ public class UserMapper {
                 user.getFirstname(),
                 user.getSurname(),
                 user.getRole(),
-                user.getTeamID()
+                user.getTeam()
         );
     }
 
@@ -25,7 +25,7 @@ public class UserMapper {
         jpa.setFirstname(user.firstname());
         jpa.setSurname(user.surname());
         jpa.setRole(user.role());
-        jpa.setTeamID(user.teamID());
+        jpa.setTeam(user.team());
         return jpa;
     }
 

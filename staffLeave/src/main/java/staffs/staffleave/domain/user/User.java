@@ -9,19 +9,19 @@ public class User extends Entity {
 
     private String firstname;
     private String surname;
-    private final UserRole role;
-    private final String teamID;
+    private final String role;
+    private final String team;
 
-    public User(Identity id, String firstname, String surname, UserRole role, String teamID) {
+    public User(Identity id, String firstname, String surname, String role, String team) {
         super(id);
         setFirstname(firstname);
         setSurname(surname);
         this.role = role;
-        this.teamID = teamID;
+        this.team = team;
     }
 
     // Factory method for testing or creation
-    public static User userOf(Identity id, String firstname, String surname, UserRole role, String teamID) {
+    public static User userOf(Identity id, String firstname, String surname, String role, String teamID) {
         return new User(id, firstname, surname, role, teamID);
     }
 
@@ -48,11 +48,11 @@ public class User extends Entity {
         return surname;
     }
 
-    public UserRole role() {
+    public String role() {
         return role;
     }
 
-    public String teamID() {
-        return teamID;
+    public String team() {
+        return team;
     }
 }

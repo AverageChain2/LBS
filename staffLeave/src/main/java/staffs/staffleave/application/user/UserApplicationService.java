@@ -44,7 +44,7 @@ public class UserApplicationService {
                         command.getFullname_firstname(),
                         command.getFullname_surname(),
                         command.getRole(),
-                        command.getTeamID()
+                        command.getTeam()
                 );
 
                 userRepository.save(UserMapper.toJpa(newUser));

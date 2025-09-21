@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import staffs.common.domain.Identity;
-import staffs.staffleave.domain.user.UserRole;
+
 
 @AllArgsConstructor
 @EqualsAndHashCode
@@ -15,6 +14,6 @@ public class UserDTO {
     private String id;
     private String fullname_firstname;
     private String fullname_surname;
-    private UserRole role;
-    private String teamID;
+    private String role;
+    private String team_name;
 }

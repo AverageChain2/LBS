@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import staffs.staffleave.domain.user.UserRole;
 
 
 @Entity(name = "users")
@@ -24,25 +23,24 @@ public class UserJpa {
     @Column(name = "surname")
     private String surname;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    private UserRole role;
+    private String role;
 
-    @Column(name = "team_id")
-    private String teamID;
+    @Column(name = "team")
+    private String team;
 
     public UserJpa() {
     }
 
-    protected UserJpa(String id, String firstname, String surname, UserRole role, String teamID) {
+    protected UserJpa(String id, String firstname, String surname, String role, String team) {
         this.id = id;
         this.firstname = firstname;
         this.surname = surname;
         this.role = role;
-        this.teamID = teamID;
+        this.team = team;
     }
 
-    public static UserJpa of(String id, String firstname, String surname, UserRole role, String teamID) {
-        return new UserJpa(id, firstname, surname, role, teamID);
+    public static UserJpa of(String id, String firstname, String surname, String role, String team) {
+        return new UserJpa(id, firstname, surname, role, team);
     }
 }

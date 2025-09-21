@@ -2,8 +2,8 @@ CREATE TABLE users (
                        id VARCHAR(255) PRIMARY KEY NOT NULL,
                        firstname VARCHAR(255) NOT NULL,
                        surname VARCHAR(255) NOT NULL,
-                       role VARCHAR(255) NOT NULL CHECK (role IN ('Staff', 'Manager', 'Admin')),
-                       team_id VARCHAR(255) -- Optional, depending on your business rules
+                       role VARCHAR(255) NOT NULL,
+                       team VARCHAR(255)
 );
 
 CREATE TABLE leave_request (

@@ -18,6 +18,6 @@ CREATE TABLE app_user (
       role_id int not null,
       team_id int not null,
       FOREIGN KEY(role_id) REFERENCES role(id),
-    FOREIGN KEY(team_id) REFERENCES team(id)
+      FOREIGN KEY(team_id) REFERENCES team(id)
 
 );
