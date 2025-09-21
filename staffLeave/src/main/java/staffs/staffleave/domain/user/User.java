@@ -3,6 +3,7 @@ package staffs.staffleave.domain.user;
 import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
+import staffs.staffleave.domain.events.NewUserAddedEvent;
 
 @ToString
 public class User extends Entity {
@@ -18,6 +19,12 @@ public class User extends Entity {
         setSurname(surname);
         this.role = role;
         this.team = team;
+    }
+
+    public static User UserOfWithEvent(Identity id, String firstname, String surname, String role, String team) {
+        User newUser = new User(id, firstname, surname, role, team);
+        newUser.addDomainEvent(new NewUserAddedEvent(newUser.id.id(), firstname, surname, role, team));
+        return newUser;
     }
 
     // Factory method for testing or creation

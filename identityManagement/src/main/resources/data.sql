@@ -1,4 +1,4 @@
-insert into role (type) values ('USER');
+insert into role (type) values ('STAFF');
 insert into role (type) values ('MANAGER');
 insert into role (type) values ('ADMIN');
 insert into team (name) values ('team1');

@@ -36,11 +36,11 @@ public class UserController {
      * POST /users
      * Adds a new user
      */
-    @PostMapping("/newUser")
-    public HttpStatus addUser(@RequestBody AddNewUserCommand command) throws UserDomainException {
-        applicationService.createUser(command);
-        return HttpStatus.CREATED;
-    }
+//    @PostMapping("/newUser")
+//    public HttpStatus addUser(@RequestBody AddNewUserCommand command) throws UserDomainException {
+//        applicationService.addNewUser(command);
+//        return HttpStatus.CREATED;
+//    }
 
 
     /**

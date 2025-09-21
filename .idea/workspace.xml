@@ -4,23 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="added team to staffLeave user">
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/events/DomainEventManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/events/EventStoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/events/MQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/events/events/NewAppUserAddedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/events/EventStoreJpa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/events/EventStoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="new app user event working">
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/events/DomainEventManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/events/MQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/events/NewAppUserAddedEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/events/NewAppUserAddedMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/events/NewUserAddedEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/config/shared_secrets.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/config/shared_secrets.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/IdentityManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/IdentityManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/events/events/NewAppUserAddedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/events/events/NewAppUserAddedEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/user/UserApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,11 +146,11 @@
       <recent name="staffs.leavemanagement.ui" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="staffs.staffleave.application.user.events" />
+      <recent name="staffs.staffleave.domain.events" />
       <recent name="staffs.common.security" />
       <recent name="staffs.staffleave.application.leaveBalance" />
-      <recent name="staffs.staffleave.domain.events" />
       <recent name="staffs.staffleave.application" />
-      <recent name="staffs.leavemanagement.domain.leaveApproval" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -255,7 +253,7 @@
       <workItem from="1757882479911" duration="23152000" />
       <workItem from="1757962632054" duration="5019000" />
       <workItem from="1758100633558" duration="8418000" />
-      <workItem from="1758379545325" duration="20244000" />
+      <workItem from="1758379545325" duration="26919000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -409,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758459095933</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="new app user event working">
+      <option name="closed" value="true" />
+      <created>1758467974136</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1758467974136</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +452,8 @@
     <MESSAGE value="Added team ID" />
     <MESSAGE value="Fixed null team and role" />
     <MESSAGE value="added team to staffLeave user" />
-    <option name="LAST_COMMIT_MESSAGE" value="added team to staffLeave user" />
+    <MESSAGE value="new app user event working" />
+    <option name="LAST_COMMIT_MESSAGE" value="new app user event working" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

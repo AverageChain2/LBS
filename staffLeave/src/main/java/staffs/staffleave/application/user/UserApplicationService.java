@@ -1,65 +1,84 @@
 package staffs.staffleave.application.user;
 
-import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
 import staffs.staffleave.application.leaveBalance.LeaveBalanceMapper;
-import staffs.staffleave.application.leaveRequest.LeaveRequestMapper;
-import staffs.staffleave.application.user.DTO.UserDTO;
+import staffs.staffleave.application.user.events.DomainEventManager;
+import staffs.staffleave.application.user.events.NewAppUserAddedMessage;
 import staffs.staffleave.domain.leaveBalance.LeaveBalance;
-import staffs.staffleave.domain.leaveRequest.LeaveRequest;
-import staffs.staffleave.domain.leaveRequest.LeaveRequestDomainException;
 import staffs.staffleave.domain.user.User;
-import staffs.staffleave.domain.user.UserDomainException;
 import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceRepository;
+import staffs.staffleave.infrastructure.user.UserJpa;
 import staffs.staffleave.infrastructure.user.UserRepository;
-import staffs.staffleave.ui.user.AddNewUserCommand;
 
-import java.time.LocalDate;
 import java.time.Year;
+import java.util.Optional;
 
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class UserApplicationService {
 
     private final UserRepository userRepository;
+    private DomainEventManager domainEventManager;
     private final Logger LOG = LoggerFactory.getLogger(getClass());
     private final LeaveBalanceRepository leaveBalanceRepository;
 
-    @Transactional
-    public void createUser(AddNewUserCommand command)
-         throws UserDomainException {
-
-            try {
-                Identity idOfNewUser = UniqueIDFactory.createID();
-                LOG.info("New user id is {}", idOfNewUser);
-                //Pass info to aggregate to validate (including other fields from command required by aggregate)
-                User newUser = new User(
-                        idOfNewUser,
-                        command.getFullname_firstname(),
-                        command.getFullname_surname(),
-                        command.getRole(),
-                        command.getTeam()
-                );
-
-                userRepository.save(UserMapper.toJpa(newUser));
-                LOG.info("User created with ID: {}", idOfNewUser);
-
-                //Create Leave Balance
-                Identity idOfNewLeaveBalance = UniqueIDFactory.createID();
-                LeaveBalance balance = new LeaveBalance(idOfNewLeaveBalance, idOfNewUser.toString(), Year.now().toString(), 210.00F);
-                leaveBalanceRepository.save(LeaveBalanceMapper.toJpa(balance));
-
-            } catch (IllegalArgumentException e) {
-                LOG.error("Error creating User: {}", e.getMessage());
-                throw new UserDomainException(e.getMessage());
-            }
+    public void addNewUser(NewAppUserAddedMessage event)
+    {
+        //Check if restaurant is already present
+        Optional<UserJpa> userJpa = userRepository.findById(event.getAggregateId());
+        if (userJpa.isPresent()) {
+            LOG.info("User already exists so no need to add here");
+            return;
         }
+
+        Identity id = new Identity(event.getAggregateId());
+        //Create new restaurant with event
+        User user = User.UserOfWithEvent(
+                id,
+                event.getFirstname(),
+                event.getSurname(),
+                event.getRole(),
+                event.getTeam());
+
+        userRepository.save(convertDomainToJpa(user));
+
+        domainEventManager.manageDomainEvents(this, user.listOfEvents);
+
+        LOG.info("User added successfully to staffLeave context");
+
+        //Create Leave Balance
+        Identity idOfNewLeaveBalance = UniqueIDFactory.createID();
+        LeaveBalance balance = new LeaveBalance(idOfNewLeaveBalance, id.toString(), Year.now().toString(), 210.00F);
+        leaveBalanceRepository.save(LeaveBalanceMapper.toJpa(balance));
+
+//
+//
+//                //Create Leave Balance
+//                Identity idOfNewLeaveBalance = UniqueIDFactory.createID();
+//                LeaveBalance balance = new LeaveBalance(idOfNewLeaveBalance, idOfNewUser.toString(), Year.now().toString(), 210.00F);
+//                leaveBalanceRepository.save(LeaveBalanceMapper.toJpa(balance));
+//
+//            } catch (IllegalArgumentException e) {
+//                LOG.error("Error creating User: {}", e.getMessage());
+//                throw new UserDomainException(e.getMessage());
+//            }
+        }
+
+    private UserJpa convertDomainToJpa(User user) {
+        UserJpa newAppUserJpa = new UserJpa();
+        newAppUserJpa.setId(user.id().id());
+        newAppUserJpa.setFirstname(user.firstname());
+        newAppUserJpa.setSurname(user.surname());
+        newAppUserJpa.setRole(user.role());
+        newAppUserJpa.setTeam(user.team());
+        return newAppUserJpa;
+    }
 
 
 

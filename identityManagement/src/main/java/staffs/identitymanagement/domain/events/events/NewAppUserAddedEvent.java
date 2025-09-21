@@ -13,19 +13,19 @@ public class NewAppUserAddedEvent implements RemoteEvent {
     private String aggregateId;
     private String appUserId;
     private String firstname;
-    private String lastname;
+    private String surname;
     private String role;
     private String team;
 
     public NewAppUserAddedEvent(String aggregateId,
                                 String appUserId,
                                 String firstname,
-                                String lastname, String role, String team) {
+                                String surname, String role, String team) {
         this.occurredOn = LocalDate.now().toString();//Otherwise exception when converting to JSON
         this.aggregateId = aggregateId;
         this.appUserId = appUserId;
         this.firstname = firstname;
-        this.lastname = lastname;
+        this.surname = surname;
         this.role = role;
         this.team = team;
     }
