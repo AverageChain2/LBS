@@ -4,6 +4,7 @@ import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
 import staffs.common.security.Role;
+import staffs.common.security.Team;
 
 
 @ToString
@@ -15,11 +16,11 @@ public class AppUserDomain extends Entity {
     private String surname;
     private String email;
     private Role roleJpa;
-//    private TeamJpa teamJpa;
+    private Team teamJpa;
 
     public AppUserDomain(Identity id, String username, String password, String firstname, String surname,
-                         String email, Role roleJpa
-//                         TeamJpa teamJpa
+                         String email, Role roleJpa,
+                         Team teamJpa
     ) {
         super(id);
         setUsername(username);
@@ -28,15 +29,15 @@ public class AppUserDomain extends Entity {
         setSurname(surname);
         setEmail(email);
         this.roleJpa = roleJpa;
-//        this.teamJpa = teamJpa;
+        this.teamJpa = teamJpa;
     }
 
     public static AppUserDomain userOf(Identity id, String username, String password, String firstname,
                                        String surname, String email, Role roleJpa
-//            , TeamJpa teamJpa
+            , Team teamJpa
     ) {
         return new AppUserDomain(id, username, password, firstname, surname, email, roleJpa
-//                , teamJpa
+                , teamJpa
         );
     }
 
@@ -73,5 +74,5 @@ public class AppUserDomain extends Entity {
     public String surname() { return surname; }
     public String email() { return email; }
     public Role roleId() { return roleJpa; }
-//    public TeamJpa teamId() { return teamJpa; }
+    public Team teamId() { return teamJpa; }
 }

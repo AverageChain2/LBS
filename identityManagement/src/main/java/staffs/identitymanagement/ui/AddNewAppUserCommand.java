@@ -12,18 +12,18 @@ public class AddNewAppUserCommand {
     private String surname;
     private String email;
     private Long roleId;
-//    private Long teamId;
+    private Long teamId;
 
     @Override
     public String toString() {
         return String.format(
-                "\nUsername: %s, First Name: %s, Surname: %s, Email: %s, Role ID: %d,",
+                "\nUsername: %s, First Name: %s, Surname: %s, Email: %s, Role ID: %d, Team ID: %d",
                 username,
                 firstname,
                 surname,
                 email,
-                roleId
-//                teamId
+                roleId,
+                teamId
         );
     }
 }

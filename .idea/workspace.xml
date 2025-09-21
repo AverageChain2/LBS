@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Able to get all users">
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Working create user route">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/DTO/AppUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/DTO/AppUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/TeamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/TeamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/AddNewAppUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/AddNewAppUserCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,11 +143,11 @@
       <recent name="staffs.leavemanagement.ui" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="staffs.common.security" />
       <recent name="staffs.staffleave.application.leaveBalance" />
       <recent name="staffs.staffleave.domain.events" />
       <recent name="staffs.staffleave.application" />
       <recent name="staffs.leavemanagement.domain.leaveApproval" />
-      <recent name="staffs.staffleave.domain.leaveBalance" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -242,7 +250,7 @@
       <workItem from="1757882479911" duration="23152000" />
       <workItem from="1757962632054" duration="5019000" />
       <workItem from="1758100633558" duration="8418000" />
-      <workItem from="1758379545325" duration="7948000" />
+      <workItem from="1758379545325" duration="10047000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -364,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758386360316</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Working create user route">
+      <option name="closed" value="true" />
+      <created>1758387810781</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1758387810781</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +413,8 @@
     <MESSAGE value="Added event for creation of request to take from balance" />
     <MESSAGE value="Added jwt to pom in staffleave" />
     <MESSAGE value="Able to get all users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Able to get all users" />
+    <MESSAGE value="Working create user route" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working create user route" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

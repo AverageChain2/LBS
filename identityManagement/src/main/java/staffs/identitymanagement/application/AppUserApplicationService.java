@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
 import staffs.common.security.Role;
+import staffs.common.security.Team;
 import staffs.identitymanagement.domain.user.AppUserDomain;
 import staffs.identitymanagement.domain.user.AppUserDomainException;
 import staffs.identitymanagement.infrastructure.RoleRepository;
+import staffs.identitymanagement.infrastructure.TeamRepository;
 import staffs.identitymanagement.infrastructure.UserRepository;
 import staffs.identitymanagement.ui.AddNewAppUserCommand;
 
@@ -24,7 +26,7 @@ import staffs.identitymanagement.ui.AddNewAppUserCommand;
 public class AppUserApplicationService {
 
     private final UserRepository appUserRepository;
-//    private final TeamRepository teamRepository;
+    private final TeamRepository teamRepository;
     private final RoleRepository roleRepository;
 
 //    private final LeaveBalanceRepository leaveBalanceRepository;
@@ -38,8 +40,8 @@ public class AppUserApplicationService {
             Role roleJpa = roleRepository.findById(command.getRoleId())
                     .orElseThrow(() -> new IllegalArgumentException("Invalid role ID"));
 
-//            TeamJpa teamJpa = teamRepository.findById(command.getTeamId())
-//                    .orElseThrow(() -> new IllegalArgumentException("Invalid team ID"));
+            Team teamJpa = teamRepository.findById(command.getTeamId())
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid team ID"));
 
 
             Identity idOfNewUser = UniqueIDFactory.createID();
@@ -52,8 +54,8 @@ public class AppUserApplicationService {
                     command.getFirstname(),
                     command.getSurname(),
                     command.getEmail(),
-                    roleJpa
-//                    teamJpa
+                    roleJpa,
+                    teamJpa
             );
 
             appUserRepository.save(AppUserMapper.domainToJpa(newAppUser));

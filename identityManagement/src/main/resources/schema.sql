@@ -3,6 +3,11 @@ CREATE TABLE role (
       type varchar(45) not null
 );
 
+CREATE TABLE team (
+      id int auto_increment primary key,
+      name varchar(45) not null
+);
+
 CREATE TABLE app_user (
       id varchar(50) primary key,
       username varchar(50) unique,
@@ -11,5 +16,8 @@ CREATE TABLE app_user (
       surname varchar(40) not null,
       email varchar(50) not null unique,
       role_id int not null,
-      FOREIGN KEY(role_id) REFERENCES role(id)
+      team_id int not null,
+      FOREIGN KEY(role_id) REFERENCES role(id),
+    FOREIGN KEY(team_id) REFERENCES team(id)
+
 );

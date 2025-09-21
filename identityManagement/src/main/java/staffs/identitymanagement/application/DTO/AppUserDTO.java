@@ -17,5 +17,5 @@ public class AppUserDTO {
     private String surname;
     private String email;
     private Long roleID;
-//    private Long teamID;
+    private Long teamID;
 }

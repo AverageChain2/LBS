@@ -20,6 +20,7 @@ public class AppUser {
     public final static String ID = "id";
     public final static String PASSWORD = "password";
     public final static String ROLE = "role";
+    public final static String TEAM = "team";
     public final static String SURNAME = "surname";
     public final static String USERNAME = "username";
 
@@ -51,6 +52,10 @@ public class AppUser {
     @JoinColumn(name="role_id")
     private Role role;
 
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name="team_id")
+    private Team team;
+
 //    public String toString(){
 //        return String.format("%s, %s, %s, %s %s" , userUUID,
 //                userName, password, email, role);
@@ -61,8 +66,8 @@ public class AppUser {
     // private Team team;
 
     public static AppUser appUserJpaOf(String id, String userName, String password, String firstName,
-                                       String surname, String email, Role role /*, Team team */) {
-        return new AppUser(id, userName, password, email, firstName, surname, role /*, team */);
+                                       String surname, String email, Role role, Team team) {
+        return new AppUser(id, userName, password, email, firstName, surname, role, team);
     }
 
 }

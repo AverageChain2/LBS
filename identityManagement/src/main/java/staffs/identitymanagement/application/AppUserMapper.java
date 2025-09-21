@@ -17,8 +17,8 @@ public class AppUserMapper {
                 jpa.getFirstName(),
                 jpa.getSurname(),
                 jpa.getEmail(),
-                jpa.getRole().getId()
-                // jpa.getTeam().getId() // Uncomment if Team is added
+                jpa.getRole().getId(),
+                 jpa.getTeam().getId()
         );
     }
 
@@ -31,8 +31,8 @@ public class AppUserMapper {
                 domain.firstname(),
                 domain.surname(),
                 domain.email(),
-                domain.roleId()
-//                domain.teamId()
+                domain.roleId(),
+                domain.teamId()
         );
     }
 
@@ -45,8 +45,8 @@ public class AppUserMapper {
                 jpa.getFirstName(),
                 jpa.getSurname(),
                 jpa.getEmail(),
-                jpa.getRole()
-                // jpa.getTeam()
+                jpa.getRole(),
+                 jpa.getTeam()
         );
     }
 
