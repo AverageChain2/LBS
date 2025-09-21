@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Working create user route">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/Team.java" afterDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Added team ID">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/staffs/common/security/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/AppUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/DTO/AppUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/application/DTO/AppUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/domain/user/AppUserDomain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/TeamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/infrastructure/TeamRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/AddNewAppUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/java/staffs/identitymanagement/ui/AddNewAppUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/identityManagement/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +241,7 @@
       <workItem from="1757882479911" duration="23152000" />
       <workItem from="1757962632054" duration="5019000" />
       <workItem from="1758100633558" duration="8418000" />
-      <workItem from="1758379545325" duration="10047000" />
+      <workItem from="1758379545325" duration="12258000" />
     </task>
     <task id="LOCAL-00001" summary="Start of application">
       <option name="closed" value="true" />
@@ -380,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758387810781</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added team ID">
+      <option name="closed" value="true" />
+      <created>1758456546687</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1758456546687</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +413,8 @@
     <MESSAGE value="Added jwt to pom in staffleave" />
     <MESSAGE value="Able to get all users" />
     <MESSAGE value="Working create user route" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working create user route" />
+    <MESSAGE value="Added team ID" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added team ID" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

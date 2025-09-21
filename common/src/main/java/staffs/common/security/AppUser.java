@@ -48,11 +48,11 @@ public class AppUser {
     @Column(name=SURNAME)
     private String surname;
 
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name="role_id")
     private Role role;
 
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name="team_id")
     private Team team;
 
@@ -60,10 +60,6 @@ public class AppUser {
 //        return String.format("%s, %s, %s, %s %s" , userUUID,
 //                userName, password, email, role);
 //    }
-
-// @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "team_id")
-    // private Team team;
 
     public static AppUser appUserJpaOf(String id, String userName, String password, String firstName,
                                        String surname, String email, Role role, Team team) {
