@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="working get leave request by team and staff ID">
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/EventStoreQueryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/ui/Events/EventStoreController.java" afterDir="false" />
+    <list default="true" id="9f6a71c2-a89a-4a1d-86bc-7eea4d76fe45" name="Changes" comment="Fixed double event issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveBalance/LeaveBalanceApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/application/leaveRequest/LeaveRequestApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/main/java/staffs/staffleave/domain/leaveRequest/LeaveRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staffLeave/src/test/java/staffs/staffleave/LeaveRequestLeaveBalanceInteractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/staffLeave/src/test/java/staffs/staffleave/LeaveRequestLeaveBalanceIntegrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +90,7 @@
     "JUnit.LeaveBalanceAggregateTests.executor": "Run",
     "JUnit.LeaveRequestAggregateTests (1).executor": "Run",
     "JUnit.LeaveRequestAggregateTests.executor": "Run",
+    "JUnit.LeaveRequestLeaveBalanceIntegrationTests.executor": "Run",
     "JUnit.LeaveRequestLeaveBalanceInteractionTests.executor": "Run",
     "JUnit.TestSuite.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -161,7 +158,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Compound.AllServices">
+  <component name="RunManager" selected="JUnit.LeaveRequestLeaveBalanceIntegrationTests">
     <configuration name="AllServices" type="CompoundRunConfigurationType">
       <toRun name="IdentityManagementApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="StaffLeaveApplication" type="SpringBootApplicationConfigurationType" />
@@ -197,16 +194,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LeaveRequestAggregateTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LeaveRequestLeaveBalanceIntegrationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="staffLeave" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="staffs.staffleave.leaveRequest.*" />
+          <option name="PATTERN" value="staffs.staffleave.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="staffs.staffleave.leaveRequest" />
-      <option name="MAIN_CLASS_NAME" value="staffs.staffleave.leaveRequest.LeaveRequestAggregateTests" />
+      <option name="PACKAGE_NAME" value="staffs.staffleave" />
+      <option name="MAIN_CLASS_NAME" value="staffs.staffleave.LeaveRequestLeaveBalanceIntegrationTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -262,8 +259,8 @@
     </configuration>
     <list>
       <item itemvalue="Compound.AllServices" />
+      <item itemvalue="JUnit.LeaveRequestLeaveBalanceIntegrationTests" />
       <item itemvalue="JUnit.LeaveBalanceAggregateTests (1)" />
-      <item itemvalue="JUnit.LeaveRequestAggregateTests" />
       <item itemvalue="JUnit.LeaveRequestAggregateTests (1)" />
       <item itemvalue="JUnit.LeaveRequestLeaveBalanceInteractionTests" />
       <item itemvalue="JUnit.TestSuite" />
@@ -273,11 +270,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LeaveRequestLeaveBalanceIntegrationTests" />
         <item itemvalue="JUnit.LeaveRequestLeaveBalanceInteractionTests" />
         <item itemvalue="JUnit.LeaveBalanceAggregateTests (1)" />
         <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="JUnit.LeaveRequestAggregateTests (1)" />
-        <item itemvalue="JUnit.LeaveRequestAggregateTests" />
       </list>
     </recent_temporary>
   </component>
@@ -483,7 +480,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758482137195</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed double event issue">
+      <option name="closed" value="true" />
+      <created>1758528400214</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1758528400214</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +528,8 @@
     <MESSAGE value="new app user event working" />
     <MESSAGE value="new user created by remote event" />
     <MESSAGE value="working get leave request by team and staff ID" />
-    <option name="LAST_COMMIT_MESSAGE" value="working get leave request by team and staff ID" />
+    <MESSAGE value="Fixed double event issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed double event issue" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
