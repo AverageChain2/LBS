@@ -42,7 +42,7 @@ public class LeaveRequestApplicationService {
             Identity idOfNewLeaveRequest = UniqueIDFactory.createID();
             LOG.info("New leave request id is {}", idOfNewLeaveRequest);
 
-            LeaveRequest newRequest = new LeaveRequest(
+            LeaveRequest newRequest = LeaveRequest.createNewLeaveRequest(
                     idOfNewLeaveRequest,
                     staff,
                     command.getStartDate(),

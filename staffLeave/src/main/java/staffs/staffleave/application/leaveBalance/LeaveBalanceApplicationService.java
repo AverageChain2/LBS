@@ -55,10 +55,10 @@ public class LeaveBalanceApplicationService {
     @org.springframework.transaction.annotation.Transactional(propagation = Propagation.REQUIRES_NEW)
     public void handleStatusChange(LeaveStatusChangeEvent event) {
         LeaveBalance leaveBalance = leaveStatusChangeDomainEventMapper.getLeaveBalanceFromStatusChangeEvent(event);
-        LeaveStatus oldStatus = event.getOldStatus(); // You need to add this to your event
+        LeaveStatus oldStatus = event.getOldStatus();
         LeaveStatus newStatus = event.getStatus();
 
-        // Only adjust on meaningful transitions
+        // If going from neg to pos
         if ((oldStatus == LeaveStatus.Pending || oldStatus == LeaveStatus.Approved)
                 && (newStatus == LeaveStatus.Cancelled || newStatus == LeaveStatus.Rejected)) {
             // Leave is being returned
@@ -66,7 +66,7 @@ public class LeaveBalanceApplicationService {
             LOG.info("Leave balance increased by {} for staff {}, new balance: {}", event.getLeaveAmount(), event.getStaffID(), leaveBalance.balance());
         } else if ((oldStatus == LeaveStatus.Cancelled || oldStatus == LeaveStatus.Rejected)
                 && (newStatus == LeaveStatus.Approved)) {
-            // Leave is being taken again
+            // if going from cancelled to approved
             LOG.info("This one old status{} new status{}", oldStatus, newStatus);
 
             leaveBalance.updateBalance(leaveBalance.balance() - event.getLeaveAmount());

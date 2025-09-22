@@ -27,10 +27,16 @@ public class LeaveRequest extends Entity {
         this.status = status;
         this.reason = reason;
 
-        // Remove leaveAmount due to pending request
-        addDomainEvent(new LeaveStatusChangeEvent(id, staffID, leaveAmount, status, status, ""));
 
     }
+
+    public static LeaveRequest createNewLeaveRequest(Identity id, UserJpa staffID, Date startDate, Date endDate, Float leaveAmount, LeaveStatus status, String reason) {
+        LeaveRequest request = new LeaveRequest(id, staffID, startDate, endDate, leaveAmount, status, reason);
+        // Remove leaveAmount due to pending request
+        request.addDomainEvent(new LeaveStatusChangeEvent(id, staffID, leaveAmount, status, status, ""));
+        return request;
+    }
+
 
     public void updateStatus(LeaveStatus newStatus, String newReason) throws LeaveRequestDomainException {
         try {
