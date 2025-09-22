@@ -3,6 +3,7 @@ package staffs.staffleave.domain.leaveBalance;
 import lombok.ToString;
 import staffs.common.domain.Entity;
 import staffs.common.domain.Identity;
+import staffs.staffleave.domain.events.LeaveBalanceUpdatedEvent;
 
 @ToString
 public class LeaveBalance extends Entity {
@@ -21,6 +22,8 @@ public class LeaveBalance extends Entity {
     public void updateBalance(Float balance) {
         // Update fields
         this.balance = balance;
+        addDomainEvent(new LeaveBalanceUpdatedEvent(id.id(), staffId, leaveYear, balance));
+
     }
 
     // Factory method for testing

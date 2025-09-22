@@ -10,7 +10,6 @@ import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 import staffs.common.domain.Identity;
 import staffs.common.domain.UniqueIDFactory;
-import staffs.staffleave.application.LeaveRejectedOrCancelledDomainEventMapper;
 import staffs.staffleave.application.LocalDomainEventManager;
 import staffs.staffleave.domain.events.LeaveStatusChangeEvent;
 import staffs.staffleave.domain.leaveBalance.LeaveBalance;
@@ -25,7 +24,6 @@ public class LeaveBalanceApplicationService {
 
     private final LeaveBalanceRepository leaveBalanceRepository;
     private final Logger LOG = LoggerFactory.getLogger(getClass());
-    private final LeaveRejectedOrCancelledDomainEventMapper leaveRejectedOrCancelledDomainEventMapper;
     private final LocalDomainEventManager localDomainEventManager;
     private final LeaveStatusChangeDomainEventMapper leaveStatusChangeDomainEventMapper;
 
@@ -53,34 +51,42 @@ public class LeaveBalanceApplicationService {
         }
     }
 
-    //Execute AFTER transaction that called this is committed
-    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)          //default phase
-    @org.springframework.transaction.annotation.Transactional(propagation = Propagation.REQUIRES_NEW)                      //creates new transaction
-    public void handleStatusChange(LeaveStatusChangeEvent event){                          //Listen for OrderStartedDomainEvent
+    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
+    @org.springframework.transaction.annotation.Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void handleStatusChange(LeaveStatusChangeEvent event) {
         LeaveBalance leaveBalance = leaveStatusChangeDomainEventMapper.getLeaveBalanceFromStatusChangeEvent(event);
-        LOG.info("Leave balance updated with ID: {}", leaveBalance.id());
+        LeaveStatus oldStatus = event.getOldStatus(); // You need to add this to your event
+        LeaveStatus newStatus = event.getStatus();
 
+        // Only adjust on meaningful transitions
+        if ((oldStatus == LeaveStatus.Pending || oldStatus == LeaveStatus.Approved)
+                && (newStatus == LeaveStatus.Cancelled || newStatus == LeaveStatus.Rejected)) {
+            // Leave is being returned
+            leaveBalance.updateBalance(leaveBalance.balance() + event.getLeaveAmount());
+            LOG.info("Leave balance increased by {} for staff {}, new balance: {}", event.getLeaveAmount(), event.getStaffID(), leaveBalance.balance());
+        } else if ((oldStatus == LeaveStatus.Cancelled || oldStatus == LeaveStatus.Rejected)
+                && (newStatus == LeaveStatus.Approved)) {
+            // Leave is being taken again
+            LOG.info("This one old status{} new status{}", oldStatus, newStatus);
 
-//        LeaveBalance balance = LeaveRequestMapper.toDomain(existingJpa);
-        if (event.getStatus() != LeaveStatus.Pending) {
-            leaveBalance.updateBalance(
-                    leaveBalance.balance() + event.getLeaveAmount()
-            );
-        } else {
-            leaveBalance.updateBalance(
-                    leaveBalance.balance() - event.getLeaveAmount()
-            );
+            leaveBalance.updateBalance(leaveBalance.balance() - event.getLeaveAmount());
+            LOG.info("Leave balance decreased by {} for staff {}, new balance: {}", event.getLeaveAmount(), event.getStaffID(), leaveBalance.balance());
+        }
+        //For initial request creation
+        else if (oldStatus == LeaveStatus.Pending && newStatus == LeaveStatus.Pending) {
+            leaveBalance.updateBalance(leaveBalance.balance() - event.getLeaveAmount());
+            LOG.info("This one old status{} new status{}", event.getOldStatus(), event.getStatus());
+
+            LOG.info("Leave balance adjusted by {} for staff {}, new balance: {}", -event.getLeaveAmount(), event.getStaffID(), leaveBalance.balance());
         }
 
-        leaveBalanceRepository.save(LeaveBalanceMapper.toJpa(leaveBalance));
-
-        LOG.info("Leave balance updated with ID: {}", leaveBalance.id());
-
 
         leaveBalanceRepository.save(LeaveBalanceMapper.toJpa(leaveBalance));
-        //notify any subscribers + save to event store
         localDomainEventManager.manageDomainEvents(this, leaveBalance.listOfDomainEvents());
     }
+
+
+
 
 
 }

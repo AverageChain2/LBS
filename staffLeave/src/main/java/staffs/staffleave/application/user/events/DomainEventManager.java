@@ -41,20 +41,4 @@ public class DomainEventManager { //change name to DomainEventManager
         }
     }
 
-//    private void sendRemoteEvent(Event event) {
-//        //More than one event so we need to identify which event in order to get the right routing key
-//        String exchange = env.getProperty("rabbitmq.order_exchange");
-//        if (event instanceof OrderStartedEvent) {
-//            String routingKey = env.getProperty("rabbitmq.newOrderKey");
-//            sender.convertAndSend(Objects.requireNonNull(exchange), Objects.requireNonNull(routingKey), event);
-//        }
-//        else if (event instanceof OrderCancelledEvent) {
-//            String routingKey = env.getProperty("rabbitmq.orderCancelledKey");
-//            sender.convertAndSend(Objects.requireNonNull(exchange), Objects.requireNonNull(routingKey), event);
-//        }
-//        else {
-//            LOG.warn("Unsupported event type: " + event.getClass().getSimpleName());
-//        }
-//        LOG.info("{} remote event has been sent", event.getClass().getSimpleName());
-//    }
 }

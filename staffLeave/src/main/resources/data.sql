@@ -10,7 +10,7 @@ INSERT INTO leave_request (id, staff_id, start_date, end_date, leave_amount, sta
 
 INSERT INTO leave_balance (id, staff_id, leave_year, balance) VALUES
     ('f2acfe57-9718-4858-b3de-68ddc0ec1126', '41440eb5-45ea-42b9-a799-c32c5627812r', '2025', 210.0),
-    ('61440eb5-45ea-42b9-a799-c32c5627812c', '41440eb5-45ea-42b9-a799-c32c5627812r', '2025', 210.0);
+    ('61440eb5-45ea-42b9-a799-c32c5627812c', '61440eb5-45ea-42b9-a799-c32c5627812c', '2025', 210.0);
 
 
 create sequence event_store_sequence_id start with (select max(id) + 1 from event_store);

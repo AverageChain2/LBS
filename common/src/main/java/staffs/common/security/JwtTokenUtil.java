@@ -48,7 +48,8 @@ public class JwtTokenUtil {
         claims.put(AppUser.FIRST_NAME, userDetails.getFirstName());
         claims.put(AppUser.SURNAME, userDetails.getSurname());
         claims.put(AppUser.EMAIL, userDetails.getEmail());
-        claims.put(AppUser.ROLE, userDetails.getRole().toString()); //As this is an object (in AppUser need to toString otherwise null)
+        claims.put(AppUser.ROLE, userDetails.getRole().toString());
+        claims.put(AppUser.TEAM, userDetails.getRole().toString());//As this is an object (in AppUser need to toString otherwise null)
         return tokenFactory(claims, userDetails.getUserName());
     }
 

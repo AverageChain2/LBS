@@ -1,7 +1,9 @@
 package staffs.staffleave.ui.LeaveRequest;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import staffs.staffleave.application.leaveRequest.LeaveRequestApplicationService;
@@ -87,9 +89,9 @@ public class LeaveRequestController {
     // }
 
     @PostMapping("/updateStatus")
-    public HttpStatus updateStatus(@RequestBody UpdateLeaveStatusCommand command)
+    public ResponseEntity<Void>  updateStatus(@RequestBody @Valid UpdateLeaveStatusCommand command)
             throws  LeaveRequestDomainException {
         leaveRequestApplicationService.updateStatus(command);
-        return HttpStatus.ACCEPTED;
+        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 }

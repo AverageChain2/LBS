@@ -2,8 +2,6 @@ package staffs.staffleave.application.leaveBalance;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import staffs.staffleave.domain.events.LeaveCancelledEvent;
-import staffs.staffleave.domain.events.LeaveRejectedEvent;
 import staffs.staffleave.domain.events.LeaveStatusChangeEvent;
 import staffs.staffleave.domain.leaveBalance.LeaveBalance;
 import staffs.staffleave.infrastructure.leaveBalance.LeaveBalanceJpa;
